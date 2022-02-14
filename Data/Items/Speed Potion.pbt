@@ -1,0 +1,27 @@
+Assets {
+  Id: 11214536043001213436
+  Name: "Speed Potion"
+  PlatformAssetType: 33
+  SerializationVersion: 107
+  ItemAsset {
+    CustomName: "Speed Potion"
+    MaximumStackCount: 1
+    CustomParameters {
+      Overrides {
+        Name: "cs:Icon"
+        AssetReference {
+          Id: 16685447297365461984
+        }
+      }
+    }
+    Assets {
+      Id: 16685447297365461984
+      Name: "Fantasy Spell Potion 014"
+      PlatformAssetType: 9
+      PrimaryAsset {
+        AssetType: "PlatformBrushAssetRef"
+        AssetId: "UI_Fantasy_Potion_014"
+      }
+    }
+  }
+}

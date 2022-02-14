@@ -1138,6 +1138,12 @@ Objects {
         Id: 9414153814428187976
       }
     }
+    Overrides {
+      Name: "cs:Potions"
+      AssetReference {
+        Id: 6391845248265823326
+      }
+    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"

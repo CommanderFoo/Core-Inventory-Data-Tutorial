@@ -15,7 +15,7 @@ local function InventoryChanged(inv, slot)
 	local childCount = childIcon:FindChildByName("Count")
 
 	if item ~= nil then
-		local icon = item:GetCustomProperty("icon")
+		local icon = item:GetCustomProperty("Icon")
 
 		childIcon:SetImage(icon)
 		childIcon.visibility = Visibility.FORCE_ON
@@ -56,7 +56,7 @@ local function OnPressedEvent(button, slot, slotIndex)
 				lastSlotClicked = nil
 			else
 				draggedItem = icon
-				draggedItem.parent = slot
+				draggedItem.parent = slot.parent
 			end
 		else
 			draggedItem.parent = slot
@@ -117,7 +117,7 @@ while inv == nil do
 end
 
 for i, item in pairs(inv:GetItems()) do
-	InventoryChanged(inv, item)
+	InventoryChanged(inv, i)
 end
 
 inv.changedEvent:Connect(InventoryChanged)

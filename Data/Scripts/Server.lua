@@ -1,4 +1,5 @@
 local BACKPACK = script:GetCustomProperty("Backpack")
+local POTIONS = require(script:GetCustomProperty("Potions"))
 
 local players = {}
 
@@ -8,6 +9,11 @@ local function OnPlayerJoined(player)
 	backpack:Assign(player)
 	backpack.name = player.name
 	players[player.id] = backpack
+
+	for _, item in pairs(POTIONS) do
+		print(item.asset)
+		backpack:AddItem(item.asset, { count = 1 })
+	end
 end
 
 local function OnPlayerLeft(player)
