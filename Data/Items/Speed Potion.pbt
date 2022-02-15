@@ -5,7 +5,7 @@ Assets {
   SerializationVersion: 107
   ItemAsset {
     CustomName: "Speed Potion"
-    MaximumStackCount: 1
+    MaximumStackCount: 10
     CustomParameters {
       Overrides {
         Name: "cs:Icon"

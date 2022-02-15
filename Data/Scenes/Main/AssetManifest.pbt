@@ -8,6 +8,15 @@ Assets {
   }
 }
 Assets {
+  Id: 16015402644942764267
+  Name: "Chest Big Closed"
+  PlatformAssetType: 1
+  PrimaryAsset {
+    AssetType: "StaticMeshAssetRef"
+    AssetId: "sm_chest_003"
+  }
+}
+Assets {
   Id: 12095835209017042614
   Name: "Cube"
   PlatformAssetType: 1
