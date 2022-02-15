@@ -17,21 +17,21 @@ function API.CreateInventory(player)
 	API.players[player.id] = inventory
 end
 
-function API.LoadPlayerInventory(inventory)
-	local data = Storage.GetPlayerData(inventory.owner)
+function API.LoadPlayerInventory(player)
+	local data = Storage.GetPlayerData(player)
 
 	if data.inv ~= nil then
 		for i, entry in ipairs(data.inv) do
 			local item = API.FindLookupItemByKey(entry[1])
 
-			if item ~= nil and inventory:CanAddItem(item.asset, { count = entry[2], slot = i }) then
-				inventory:AddItem(item.asset, { count = entry[2], slot = i })
+			if item ~= nil and API.players[player.id]:CanAddItem(item.asset, { count = entry[2], slot = i }) then
+				API.players[player.id]:AddItem(item.asset, { count = entry[2], slot = i })
 			end
 		end
 	elseif API.DEBUG then
 		for _, item in pairs(POTIONS) do
-			if inventory:CanAddItem(item.asset, { count = 10 }) then
-				inventory:AddItem(item.asset, { count = 10 })
+			if API.players[player.id]:CanAddItem(item.asset, { count = 10 }) then
+				API.players[player.id]:AddItem(item.asset, { count = 10 })
 			end
 		end
 	end
@@ -60,11 +60,16 @@ function API.SavePlayerInventory(player)
 	Storage.SetPlayerData(player, data)
 end
 
--- local function MoveSlot(player, fromSlotIndex, toSlotIndex)
--- 	if(players[player.id]:CanMoveFromSlot(fromSlotIndex, toSlotIndex)) then
--- 		players[player.id]:MoveFromSlot(fromSlotIndex, toSlotIndex)
--- 	end
--- end
+function API.RemovePlayerInventory(player)
+	API.players[player.id]:Destroy()
+	API.players[player.id] = nil
+end
+
+function API.MoveSlot(player, fromSlotIndex, toSlotIndex)
+	if(API.players[player.id]:CanMoveFromSlot(fromSlotIndex, toSlotIndex)) then
+		API.players[player.id]:MoveFromSlot(fromSlotIndex, toSlotIndex)
+	end
+end
 
 -- Client
 
@@ -106,7 +111,7 @@ end
 -- Events
 
 if Environment.IsServer() then
--- Events.ConnectForPlayer("inventory.moveslot", MoveSlot)
+	Events.ConnectForPlayer("inventory.moveslot", API.MoveSlot)
 end
 
 return API

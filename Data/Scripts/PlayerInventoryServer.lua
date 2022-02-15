@@ -7,7 +7,7 @@ end
 
 local function OnPlayerLeft(player)
 	API.SavePlayerInventory(player)
-	API.RemovePlayerInventor(player)
+	API.RemovePlayerInventory(player)
 end
 
 Game.playerJoinedEvent:Connect(OnPlayerJoined)
