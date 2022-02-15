@@ -93,6 +93,7 @@ Objects {
   }
   ParentId: 17979885260696604413
   ChildIds: 16410885401518809118
+  ChildIds: 11079737718754707011
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -106,6 +107,50 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 11079737718754707011
+  Name: "DragProxyClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4734567180528103950
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Proxy"
+      ObjectReference {
+        SelfId: 10190443834715983840
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15789417508315437298
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1533,18 +1578,6 @@ Objects {
   }
   ParentId: 3346982450882069785
   UnregisteredParameters {
-    Overrides {
-      Name: "cs:Backpack"
-      AssetReference {
-        Id: 9414153814428187976
-      }
-    }
-    Overrides {
-      Name: "cs:Potions"
-      AssetReference {
-        Id: 6391845248265823326
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1587,6 +1620,7 @@ Objects {
   ChildIds: 4651665856030876054
   ChildIds: 3527304057804037790
   ChildIds: 13380551551338227824
+  ChildIds: 12078013601130627216
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -1601,6 +1635,91 @@ Objects {
   }
   Folder {
     IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 12078013601130627216
+  Name: "Server"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 1854325465249854963
+  ChildIds: 14472447972814474628
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 14472447972814474628
+  Name: "InventoryChestServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12078013601130627216
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Inventory"
+      ObjectReference {
+        SelfId: 4651665856030876054
+      }
+    }
+    Overrides {
+      Name: "cs:Potions"
+      AssetReference {
+        Id: 6391845248265823326
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8724036724761246186
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -1647,7 +1766,7 @@ Objects {
 }
 Objects {
   Id: 4473610702018488492
-  Name: "InventoryChest"
+  Name: "InventoryChestClient"
   Transform {
     Location {
       X: -3.90164185
@@ -1672,9 +1791,27 @@ Objects {
       }
     }
     Overrides {
-      Name: "cs:ChestInventory"
+      Name: "cs:Inventory"
+      ObjectReference {
+        SelfId: 4651665856030876054
+      }
+    }
+    Overrides {
+      Name: "cs:Slots"
+      ObjectReference {
+        SelfId: 2515326520888451662
+      }
+    }
+    Overrides {
+      Name: "cs:InventoryUI"
       ObjectReference {
         SelfId: 14294884745220893393
+      }
+    }
+    Overrides {
+      Name: "cs:Proxy"
+      ObjectReference {
+        SelfId: 10190443834715983840
       }
     }
   }
@@ -1761,7 +1898,7 @@ Objects {
 }
 Objects {
   Id: 14294884745220893393
-  Name: "Chest Inventory"
+  Name: "Chest Inventory Panel"
   Transform {
     Location {
     }

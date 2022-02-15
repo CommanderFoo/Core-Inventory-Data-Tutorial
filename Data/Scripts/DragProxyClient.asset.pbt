@@ -1,6 +1,6 @@
 Assets {
-  Id: 10545072440016289850
-  Name: "PlayerInventoryClient"
+  Id: 15789417508315437298
+  Name: "DragProxyClient"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {

@@ -1,13 +1,11 @@
-local SLOTS = script:GetCustomProperty("Slots"):WaitForObject()
-local PROXY = script:GetCustomProperty("Proxy"):WaitForObject()
+local API = require(script:GetCustomProperty("API"))
 
-local PROXY_ICON = PROXY:FindChildByName("Icon")
+local SLOTS = script:GetCustomProperty("Slots"):WaitForObject()
 
 local localPlayer = Game.GetLocalPlayer()
-local inv = nil
+local inventory = nil
 
-UI.SetCanCursorInteractWithUI(true)
-UI.SetCursorVisible(true)
+API.EnableCursor()
 
 local activeSlot = nil
 local activeSlotIcon = nil
@@ -38,7 +36,7 @@ local function ClearDraggedItem()
 		activeSlot = nil
 		activeSlotIcon = nil
 		activeSlotCount = nil
-		PROXY.visibility = Visibility.FORCE_OFF
+		API.PROXY.visibility = Visibility.FORCE_OFF
 		hasItem = false
 	end
 end
@@ -54,7 +52,7 @@ local function OnPressedEvent(button, slot, slotIndex)
 		-- No icon, so this is an empty slot, and dropping it into it.
 		if isHidden then
 			icon.visibility = Visibility.FORCE_ON
-			icon:SetImage(PROXY_ICON:GetImage())
+			icon:SetImage(API.PROXY_ICON:GetImage())
 			activeSlot.opacity = 1
 			activeSlotIcon.visibility = Visibility.FORCE_OFF
 			count.text = activeSlotCount.text
@@ -82,13 +80,13 @@ local function OnPressedEvent(button, slot, slotIndex)
 		activeSlotCount = nil
 		activeSlotIndex = nil
 		hasItem = false
-		PROXY.visibility = Visibility.FORCE_OFF
+		API.PROXY.visibility = Visibility.FORCE_OFF
 
 	-- No item, pick up from clicked slot.
 	else
-		PROXY.visibility = Visibility.FORCE_ON
+		API.PROXY.visibility = Visibility.FORCE_ON
 		hasItem = true
-		PROXY_ICON:SetImage(icon:GetImage())
+		API.PROXY_ICON:SetImage(icon:GetImage())
 		slot.opacity = .6
 		activeSlot = slot
 		activeSlotIcon = icon
@@ -96,55 +94,6 @@ local function OnPressedEvent(button, slot, slotIndex)
 		activeSlotIndex = slotIndex
 	end
 end
-
--- local function OnPressedEvent(button, slot, slotIndex)
--- 	local icon = slot:FindChildByName("Icon")
--- 	local isHidden = false
-
--- 	if(icon ~= nil) then
--- 		isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
--- 	end
-
--- 	-- If we are already dragging item
--- 	if(draggedItem ~= nil) then
--- 		draggedItem.parent = slot
--- 		draggedItem.x = 0
--- 		draggedItem.y = 0
-
--- 		-- Got an icon
--- 		if(icon ~= nil) then
--- 			local tmpLastSlotIndex = lastSlotIndex
-
--- 			-- Got an icon but it's hidden, so it's an empty slot
--- 			if(isHidden) then
--- 				icon.parent = lastSlotClicked
--- 				draggedItem = nil
--- 				lastSlotClicked = nil
--- 				lastSlotIndex = nil
-
--- 			-- Swap item in slot with dragged item
--- 			else
--- 				icon.parent = lastSlotClicked
--- 			end
-
--- 			Events.BroadcastToServer("inventory.moveslot", tmpLastSlotIndex, slotIndex)
-
--- 		-- If icon is nil, then it's the same slot
--- 		else
--- 			draggedItem.parent = slot
--- 			draggedItem = nil
--- 			lastSlotClicked = nil
--- 			lastSlotIndex = nil
--- 		end
-
--- 	-- Not dragging an item, and the slot icon is not hidden
--- 	elseif not isHidden then
--- 		draggedItem = icon
--- 		draggedItem.parent = slot.parent
--- 		lastSlotClicked = slot
--- 		lastSlotIndex = slotIndex
--- 	end
--- end
 
 local function OnHoveredEvent(button, slot, slotIndex)
 	local bg = slot:FindChildByName("Background")
@@ -172,7 +121,7 @@ function Tick()
 	if hasItem then
 		local mousePos = UI.GetCursorPosition()
 
-		PROXY:SetAbsolutePosition(Vector2.New(mousePos.x, mousePos.y))
+		API.PROXY:SetAbsolutePosition(Vector2.New(mousePos.x, mousePos.y))
 	end
 end
 
@@ -187,14 +136,14 @@ for index, slot in ipairs(SLOTS:GetChildren()) do
 	end
 end
 
-while inv == nil do
-	inv = localPlayer:GetInventories()[1]
+while inventory == nil do
+	inventory = localPlayer:GetInventories()[1]
 	Task.Wait()
 end
 
-for i, item in pairs(inv:GetItems()) do
-	InventoryChanged(inv, i)
+for i, item in pairs(inventory:GetItems()) do
+	InventoryChanged(inventory, i)
 end
 
-inv.changedEvent:Connect(InventoryChanged)
+inventory.changedEvent:Connect(InventoryChanged)
 Input.actionPressedEvent:Connect(DropDraggedItem)
