@@ -557,7 +557,6 @@ Objects {
   }
   ParentId: 3107329432688077437
   ChildIds: 158112545039990231
-  ChildIds: 2499355903812577225
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -587,105 +586,6 @@ Objects {
         Y: 1024
       }
       RedrawTime: 30
-    }
-    AnchorLayout {
-      SelfAnchor {
-        Anchor {
-          Value: "mc:euianchor:topleft"
-        }
-      }
-      TargetAnchor {
-        Anchor {
-          Value: "mc:euianchor:topleft"
-        }
-      }
-    }
-  }
-}
-Objects {
-  Id: 2499355903812577225
-  Name: "UI Button"
-  Transform {
-    Location {
-    }
-    Rotation {
-    }
-    Scale {
-      X: 1
-      Y: 1
-      Z: 1
-    }
-  }
-  ParentId: 7117247303919089753
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
-  CameraCollidable {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  EditorIndicatorVisibility {
-    Value: "mc:eindicatorvisibility:visiblewhenselected"
-  }
-  Control {
-    Width: 100
-    Height: 30
-    RenderTransformPivot {
-      Anchor {
-        Value: "mc:euianchor:middlecenter"
-      }
-    }
-    Button {
-      FontColor {
-        A: 1
-      }
-      FontSize: 20
-      ButtonColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      HoveredColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      PressedColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      DisabledColor {
-        R: 1
-        G: 1
-        B: 1
-        A: 1
-      }
-      Brush {
-        Id: 841534158063459245
-      }
-      IsButtonEnabled: true
-      ClickMode {
-        Value: "mc:ebuttonclickmode:default"
-      }
-      Font {
-      }
-      Justification {
-        Value: "mc:etextjustify:center"
-      }
-      VerticalJustification {
-        Value: "mc:everticaljustification:center"
-      }
-      ShadowColor {
-        A: 1
-      }
-      ShadowOffset {
-      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -784,14 +684,14 @@ Objects {
   ChildIds: 1337339892847195245
   ChildIds: 9525413709600367987
   ChildIds: 4251991994502278241
-  ChildIds: 9300381158908525944
-  ChildIds: 9682825116167659338
-  ChildIds: 7775232834808866191
-  ChildIds: 8670598970177742414
-  ChildIds: 13603479146727672964
-  ChildIds: 1840212594934539957
-  ChildIds: 16536138916256911156
-  ChildIds: 8599681802952702869
+  ChildIds: 16318257738933214265
+  ChildIds: 2129672680866708438
+  ChildIds: 16870122490397203486
+  ChildIds: 17903301256295199463
+  ChildIds: 7659037382552906580
+  ChildIds: 14573403786064821185
+  ChildIds: 8494585519315009199
+  ChildIds: 13181431529336922033
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -833,8 +733,8 @@ Objects {
   }
 }
 Objects {
-  Id: 8599681802952702869
-  Name: "Slot"
+  Id: 13181431529336922033
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -847,19 +747,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -870,14 +764,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -895,29 +781,16 @@ Objects {
           Name: "UIY"
           Float: 320
         }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 16536138916256911156
-  Name: "Slot"
+  Id: 8494585519315009199
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -930,19 +803,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -953,14 +820,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -978,29 +837,16 @@ Objects {
           Name: "UIY"
           Float: 320
         }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 1840212594934539957
-  Name: "Slot"
+  Id: 14573403786064821185
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -1013,19 +859,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -1036,14 +876,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -1061,29 +893,16 @@ Objects {
           Name: "UIY"
           Float: 320
         }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 13603479146727672964
-  Name: "Slot"
+  Id: 7659037382552906580
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -1096,19 +915,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -1119,14 +932,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -1140,29 +945,16 @@ Objects {
           Name: "UIY"
           Float: 320
         }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 8670598970177742414
-  Name: "Slot"
+  Id: 17903301256295199463
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -1175,19 +967,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -1198,14 +984,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -1219,33 +997,16 @@ Objects {
           Name: "UIX"
           Float: 240
         }
-        Overrides {
-          Name: "UIY"
-          Float: 240
-        }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 7775232834808866191
-  Name: "Slot"
+  Id: 16870122490397203486
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -1258,19 +1019,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -1281,14 +1036,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -1302,33 +1049,16 @@ Objects {
           Name: "UIX"
           Float: 160
         }
-        Overrides {
-          Name: "UIY"
-          Float: 240
-        }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 9682825116167659338
-  Name: "Slot"
+  Id: 2129672680866708438
+  Name: "Slot Locked"
   Transform {
     Location {
     }
@@ -1341,19 +1071,13 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
+          String: "Slot Locked"
         }
         Overrides {
           Name: "Position"
@@ -1364,14 +1088,6 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
         }
         Overrides {
           Name: "Scale"
@@ -1385,38 +1101,17 @@ Objects {
           Name: "UIX"
           Float: 80
         }
-        Overrides {
-          Name: "UIY"
-          Float: 240
-        }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
-        }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }
 Objects {
-  Id: 9300381158908525944
-  Name: "Slot"
+  Id: 16318257738933214265
+  Name: "Slot Locked"
   Transform {
-    Location {
-    }
-    Rotation {
-    }
     Scale {
       X: 1
       Y: 1
@@ -1424,67 +1119,18 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
-  Collidable_v2 {
-    Value: "mc:ecollisionsetting:inheritfromparent"
-  }
-  Visible_v2 {
-    Value: "mc:evisibilitysetting:inheritfromparent"
-  }
   TemplateInstance {
     ParameterOverrideMap {
-      key: 7956731972840643538
+      key: 12714678607298909253
       value {
         Overrides {
           Name: "Name"
-          String: "Slot"
-        }
-        Overrides {
-          Name: "Position"
-          Vector {
-          }
-        }
-        Overrides {
-          Name: "Rotation"
-          Rotator {
-          }
-        }
-        Overrides {
-          Name: "Width"
-          Int: 75
-        }
-        Overrides {
-          Name: "Height"
-          Int: 75
-        }
-        Overrides {
-          Name: "Scale"
-          Vector {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        Overrides {
-          Name: "UIY"
-          Float: 240
-        }
-        Overrides {
-          Name: "Opacity"
-          Float: 0.4
-        }
-      }
-    }
-    ParameterOverrideMap {
-      key: 8434868342772142117
-      value {
-        Overrides {
-          Name: "UIEnabled"
-          Bool: false
+          String: "Slot Locked"
         }
       }
     }
     TemplateAsset {
-      Id: 12394820399536874918
+      Id: 3669531844946665302
     }
   }
 }

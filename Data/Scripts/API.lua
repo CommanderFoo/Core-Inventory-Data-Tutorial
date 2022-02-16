@@ -291,6 +291,8 @@ function API.OnUnhoveredEvent(button, inventory, slot, slotIndex)
 
 	color.a = 0.425
 	bg:SetColor(color)
+
+	print("Unhovered", time())
 end
 
 -- Shared

@@ -10,6 +10,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "m"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 10
+              }
+            }
           }
         }
       }
@@ -28,22 +44,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "sp"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 3
-              }
-            }
           }
         }
       }
@@ -71,30 +71,28 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "a"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 9
+              }
+            }
           }
         }
       }
       Entries {
         Key {
           IntVar: 7
-        }
-        SimpleValue {
-          Table {
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 8
-        }
-        SimpleValue {
-          Table {
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 9
         }
         SimpleValue {
           Table {
@@ -111,9 +109,43 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 6
+                IntVar: 7
               }
             }
+          }
+        }
+      }
+      Entries {
+        Key {
+          IntVar: 8
+        }
+        SimpleValue {
+          Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "sp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 8
+              }
+            }
+          }
+        }
+      }
+      Entries {
+        Key {
+          IntVar: 9
+        }
+        SimpleValue {
+          Table {
           }
         }
       }
