@@ -433,12 +433,6 @@ Objects {
         SelfId: 11725240846513322496
       }
     }
-    Overrides {
-      Name: "cs:Proxy"
-      ObjectReference {
-        SelfId: 841015936171991590
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -1808,12 +1802,6 @@ Objects {
         SelfId: 14294884745220893393
       }
     }
-    Overrides {
-      Name: "cs:Proxy"
-      ObjectReference {
-        SelfId: 10190443834715983840
-      }
-    }
   }
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
@@ -2549,15 +2537,15 @@ Objects {
   Name: "Trigger"
   Transform {
     Location {
-      X: 1.66893e-06
-      Y: -2.99563551
+      X: -8.01086426e-05
+      Y: 59.8527794
       Z: 104.003159
     }
     Rotation {
     }
     Scale {
       X: 2.73800564
-      Y: 2.04292822
+      Y: 2.73324728
       Z: 2.28636408
     }
   }

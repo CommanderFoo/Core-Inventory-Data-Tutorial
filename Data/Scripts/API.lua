@@ -82,7 +82,7 @@ function API.RemovePlayerInventory(player)
 	API.PLAYERS[player.id] = nil
 end
 
-function API.MoveItem(player, fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
+function API.MoveItem(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
 	local fromInventory = API.INVENTORIES[fromInventoryId]
 	local toInventory = API.INVENTORIES[toInventoryId]
 
@@ -91,11 +91,49 @@ function API.MoveItem(player, fromInventoryId, toInventoryId, fromSlotIndex, toS
 			if fromInventory:CanMoveFromSlot(fromSlotIndex, toSlotIndex) then
 				fromInventory:MoveFromSlot(fromSlotIndex, toSlotIndex)
 			end
-		elseif fromInventory:CanGiveFromSlot(fromSlotIndex, toInventory) then
+		else
 			local fromItem = fromInventory:GetItem(fromSlotIndex)
 			local toItem = toInventory:GetItem(toSlotIndex)
 
-			print(fromItem, toItem)
+			local fromItemAssetId = fromItem.itemAssetId
+			local fromItemCount = fromItem.count
+
+			if toItem ~= nil then
+				local toItemAssetId = toItem.itemAssetId
+				local toItemCount = toItem.count
+				local skipFromItem = false
+
+				if toItemAssetId == fromItemAssetId then
+					local total = toItemCount + fromItemCount
+
+					if total > toItem.maximumStackCount then
+						if toItemCount == toItem.maximumStackCount then
+							toItemCount = toItem.maximumStackCount
+							fromItemCount = total - toItem.maximumStackCount
+						else
+							print("here")
+							toItemCount = total - toItem.maximumStackCount
+							fromItemCount = toItem.maximumStackCount
+						end
+
+						print(toItemCount, fromItemCount)
+					else
+						skipFromItem = true
+						fromItemCount = total
+					end
+				end
+
+				fromInventory:RemoveFromSlot(fromSlotIndex)
+				toInventory:RemoveFromSlot(toSlotIndex)
+
+				if not skipFromItem then
+					fromInventory:AddItem(toItemAssetId, { count = toItemCount, slot = fromSlotIndex })
+				end
+			else
+				fromInventory:RemoveFromSlot(fromSlotIndex)
+			end
+
+			toInventory:AddItem(fromItemAssetId, { count = fromItemCount, slot = toSlotIndex })
 		end
 	end
 end
@@ -164,7 +202,7 @@ function API.OnSlotPressed(button, inventory, slot, slotIndex)
 		API.PROXY.visibility = Visibility.FORCE_OFF
 
 	-- No item, pick up from clicked slot.
-	else
+	elseif not isHidden then
 		API.PROXY.visibility = Visibility.FORCE_ON
 		API.DRAGGED_ITEM.hasItem = true
 		API.PROXY_ICON:SetImage(icon:GetImage())
@@ -208,7 +246,7 @@ end
 -- Events
 
 if Environment.IsServer() then
-	Events.ConnectForPlayer("inventory.moveitem", API.MoveItem)
+	Events.Connect("inventory.moveitem", API.MoveItem)
 else
 	Input.actionPressedEvent:Connect(API.DropDraggedItem)
 end
