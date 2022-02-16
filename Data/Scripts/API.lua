@@ -47,14 +47,6 @@ function API.LoadPlayerInventory(player)
 				API.PLAYERS[player.id]:AddItem(item.asset, { count = entry[2], slot = i })
 			end
 		end
-
-		-- Task.Spawn(function()
-		-- 	print("Sort")
-		-- 	API.PLAYERS[player.id]:SortItems()
-		-- 	Task.Wait(1)
-		-- 	print("Move")
-		-- 	API.PLAYERS[player.id]:MoveFromSlot(1, 9)
-		-- end, 5)
 	elseif API.DEBUG then
 		for _, item in pairs(POTIONS) do
 			if API.PLAYERS[player.id]:CanAddItem(item.asset, { count = 10 }) then
@@ -153,8 +145,8 @@ function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlo
 	if fromInventory ~= nil and toInventory ~= nil then
 		local item = fromInventory:GetItem(fromSlotIndex)
 
-		toInventory:AddItem(item.itemAssetId, { count = 1})
-		fromInventory:RemoveItem(item.itemAssetId, { count = 1 })
+		toInventory:AddItem(item.itemAssetId, { count = 1, slot = toSlotIndex })
+		fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 })
 	end
 end
 
@@ -249,12 +241,29 @@ function API.DropOne(player, action)
 			local item = API.ACTIVE.inventory:GetItem(API.ACTIVE.slotIndex)
 
 			if API.ACTIVE.inventory == API.ACTIVE.hoveredInventory and API.ACTIVE.slotIndex == API.ACTIVE.hoveredSlotIndex then
-				print("drop remaining stack")
+				API.PROXY.visibility = Visibility.FORCE_OFF
+				API.ACTIVE.slot.opacity = 1
+				API.ClearDraggedItem()
 			elseif isHidden then
+				local newCount = math.max(0, item.count - 1)
+
 				icon.visibility = Visibility.FORCE_ON
 				icon:SetImage(API.PROXY_ICON:GetImage())
+				API.PROXY_COUNT.text = tostring(newCount)
 
 				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+
+				if newCount == 0 then
+					API.PROXY.visibility = Visibility.FORCE_OFF
+					API.ACTIVE.slot.opacity = 1
+					API.ClearDraggedItem()
+				end
+			elseif API.ACTIVE.inventory == API.ACTIVE.hoveredInventory then
+				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+
+				API.PROXY.visibility = Visibility.FORCE_OFF
+				API.ACTIVE.slot.opacity = 1
+				API.ClearDraggedItem()
 			end
 
 			-- API.ACTIVE.slot.opacity = 1
