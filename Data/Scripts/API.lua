@@ -47,6 +47,14 @@ function API.LoadPlayerInventory(player)
 				API.PLAYERS[player.id]:AddItem(item.asset, { count = entry[2], slot = i })
 			end
 		end
+
+		-- Task.Spawn(function()
+		-- 	print("Sort")
+		-- 	API.PLAYERS[player.id]:SortItems()
+		-- 	Task.Wait(1)
+		-- 	print("Move")
+		-- 	API.PLAYERS[player.id]:MoveFromSlot(1, 9)
+		-- end, 5)
 	elseif API.DEBUG then
 		for _, item in pairs(POTIONS) do
 			if API.PLAYERS[player.id]:CanAddItem(item.asset, { count = 10 }) then
@@ -143,9 +151,10 @@ function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlo
 	local toInventory = API.INVENTORIES[toInventoryId]
 
 	if fromInventory ~= nil and toInventory ~= nil then
-		if fromInventory == toInventory then
+		local item = fromInventory:GetItem(fromSlotIndex)
 
-		end
+		toInventory:AddItem(item.itemAssetId, { count = 1})
+		fromInventory:RemoveItem(item.itemAssetId, { count = 1 })
 	end
 end
 
