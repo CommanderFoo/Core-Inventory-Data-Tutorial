@@ -6,14 +6,17 @@ local API = {}
 API.DEBUG = true
 API.PLAYERS = {}
 API.INVENTORIES = {}
-API.DRAGGED_ITEM = {
+API.ACTIVE = {
 
-	activeSlot = nil,
-	activeSlotIcon = nil,
-	activeSlotCount = nil,
-	activeSlotIndex = nil,
-	activeInventory = nil,
-	hasItem = false
+	slot = nil,
+	slotIcon = nil,
+	slotCount = nil,
+	slotIndex = nil,
+	inventory = nil,
+	hasItem = false,
+	hoveredSlotIndex = nil,
+	hoveredInventory = nil,
+	hoveredSlot = nil
 
 }
 
@@ -82,7 +85,7 @@ function API.RemovePlayerInventory(player)
 	API.PLAYERS[player.id] = nil
 end
 
-function API.MoveItem(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
+function API.MoveItemHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
 	local fromInventory = API.INVENTORIES[fromInventoryId]
 	local toInventory = API.INVENTORIES[toInventoryId]
 
@@ -111,12 +114,9 @@ function API.MoveItem(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex
 							toItemCount = toItem.maximumStackCount
 							fromItemCount = total - toItem.maximumStackCount
 						else
-							print("here")
 							toItemCount = total - toItem.maximumStackCount
 							fromItemCount = toItem.maximumStackCount
 						end
-
-						print(toItemCount, fromItemCount)
 					else
 						skipFromItem = true
 						fromItemCount = total
@@ -138,20 +138,35 @@ function API.MoveItem(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex
 	end
 end
 
+function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
+	local fromInventory = API.INVENTORIES[fromInventoryId]
+	local toInventory = API.INVENTORIES[toInventoryId]
+
+	if fromInventory ~= nil and toInventory ~= nil then
+		if fromInventory == toInventory then
+
+		end
+	end
+end
+
 -- Client
 
 function API.ClearDraggedItem()
-	API.DRAGGED_ITEM.activeSlot = nil
-	API.DRAGGED_ITEM.activeSlotIcon = nil
-	API.DRAGGED_ITEM.activeSlotCount = nil
-	API.DRAGGED_ITEM.activeSlotIndex = nil
-	API.DRAGGED_ITEM.activeInventory = nil
-	API.DRAGGED_ITEM.hasItem = false
+	API.ACTIVE.slot = nil
+	API.ACTIVE.slotIcon = nil
+	API.ACTIVE.slotCount = nil
+	API.ACTIVE.slotIndex = nil
+	API.ACTIVE.inventory = nil
+	API.ACTIVE.hasItem = false
+	API.ACTIVE.hoveredSlot = nil
+	API.ACTIVE.hoveredSlotIndex = nil
+	API.ACTIVE.hoveredInventory = nil
 end
 
 function API.SetDragProxy(proxy)
 	API.PROXY = proxy
 	API.PROXY_ICON = proxy:FindChildByName("Icon")
+	API.PROXY_COUNT = API.PROXY_ICON:FindChildByName("Count")
 end
 
 function API.EnableCursor()
@@ -170,33 +185,33 @@ function API.OnSlotPressed(button, inventory, slot, slotIndex)
 	local count = icon:FindChildByName("Count")
 
 	-- Has item already.
-	if API.DRAGGED_ITEM.hasItem then
+	if API.ACTIVE.hasItem then
 
 		-- No icon, so this is an empty slot, and dropping it into it.
 		if isHidden then
 			icon.visibility = Visibility.FORCE_ON
 			icon:SetImage(API.PROXY_ICON:GetImage())
-			API.DRAGGED_ITEM.activeSlot.opacity = 1
-			API.DRAGGED_ITEM.activeSlotIcon.visibility = Visibility.FORCE_OFF
-			count.text = API.DRAGGED_ITEM.activeSlotCount.text
-			API.DRAGGED_ITEM.activeSlotCount.text = "0"
+			API.ACTIVE.slot.opacity = 1
+			API.ACTIVE.slotIcon.visibility = Visibility.FORCE_OFF
+			count.text = API.ACTIVE.slotCount.text
+			API.ACTIVE.slotCount.text = "0"
 
 		-- Slot contains existing item
 		else
 			local tmpImg = icon:GetImage()
 			local tmpCount = count.text
 
-			icon:SetImage(API.DRAGGED_ITEM.activeSlotIcon:GetImage())
-			count.text = API.DRAGGED_ITEM.activeSlotCount.text
-			API.DRAGGED_ITEM.activeSlotIcon:SetImage(tmpImg)
-			API.DRAGGED_ITEM.activeSlotCount.text = tmpCount
-			API.DRAGGED_ITEM.activeSlot.opacity = 1
+			icon:SetImage(API.ACTIVE.slotIcon:GetImage())
+			count.text = API.ACTIVE.slotCount.text
+			API.ACTIVE.slotIcon:SetImage(tmpImg)
+			API.ACTIVE.slotCount.text = tmpCount
+			API.ACTIVE.slot.opacity = 1
 
 			tmpCount = nil
 			tmpImg = nil
 		end
 
-		Events.BroadcastToServer("inventory.moveitem", API.DRAGGED_ITEM.activeInventory.id, inventory.id, API.DRAGGED_ITEM.activeSlotIndex, slotIndex)
+		Events.BroadcastToServer("inventory.moveitem", API.ACTIVE.inventory.id, inventory.id, API.ACTIVE.slotIndex, slotIndex)
 
 		API.ClearDraggedItem()
 		API.PROXY.visibility = Visibility.FORCE_OFF
@@ -204,15 +219,60 @@ function API.OnSlotPressed(button, inventory, slot, slotIndex)
 	-- No item, pick up from clicked slot.
 	elseif not isHidden then
 		API.PROXY.visibility = Visibility.FORCE_ON
-		API.DRAGGED_ITEM.hasItem = true
+		API.ACTIVE.hasItem = true
 		API.PROXY_ICON:SetImage(icon:GetImage())
+		API.PROXY_COUNT.text = tostring(inventory:GetItem(slotIndex).count)
 		slot.opacity = .6
-		API.DRAGGED_ITEM.activeSlot = slot
-		API.DRAGGED_ITEM.activeSlotIcon = icon
-		API.DRAGGED_ITEM.activeSlotCount = count
-		API.DRAGGED_ITEM.activeSlotIndex = slotIndex
-		API.DRAGGED_ITEM.activeInventory = inventory
+		API.ACTIVE.slot = slot
+		API.ACTIVE.slotIcon = icon
+		API.ACTIVE.slotCount = count
+		API.ACTIVE.slotIndex = slotIndex
+		API.ACTIVE.inventory = inventory
 	end
+end
+
+function API.DropOne(player, action)
+	if action == "Inventory Drop One" then
+		if API.ACTIVE.hasItem and API.ACTIVE.hoveredInventory and API.ACTIVE.hoveredSlot then
+			local icon = API.ACTIVE.hoveredSlot:FindChildByName("Icon")
+			local isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
+			local count = icon:FindChildByName("Count")
+			local item = API.ACTIVE.inventory:GetItem(API.ACTIVE.slotIndex)
+
+			if API.ACTIVE.inventory == API.ACTIVE.hoveredInventory and API.ACTIVE.slotIndex == API.ACTIVE.hoveredSlotIndex then
+				print("drop remaining stack")
+			elseif isHidden then
+				icon.visibility = Visibility.FORCE_ON
+				icon:SetImage(API.PROXY_ICON:GetImage())
+
+				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+			end
+
+			-- API.ACTIVE.slot.opacity = 1
+			-- API.PROXY.visibility = Visibility.FORCE_OFF
+			-- API.ClearDraggedItem()
+		end
+	end
+end
+
+function API.OnHoveredEvent(button, inventory, slot, slotIndex)
+	local bg = slot:FindChildByName("Background")
+	local color = bg:GetColor()
+
+	color.a = .6
+	bg:SetColor(color)
+
+	API.ACTIVE.hoveredSlotIndex = slotIndex
+	API.ACTIVE.hoveredInventory = inventory
+	API.ACTIVE.hoveredSlot = slot
+end
+
+function API.OnUnhoveredEvent(button, inventory, slot, slotIndex)
+	local bg = slot:FindChildByName("Background")
+	local color = bg:GetColor()
+
+	color.a = 0.425
+	bg:SetColor(color)
 end
 
 -- Shared
@@ -235,20 +295,13 @@ function API.FindLookupItemByAssetId(item)
 	end
 end
 
-function API.DropDraggedItem(player, action)
-	if(action == "Drop Item" and API.DRAGGED_ITEM.hasItem) then
-		API.DRAGGED_ITEM.activeSlot.opacity = 1
-		API.PROXY.visibility = Visibility.FORCE_OFF
-		API.ClearDraggedItem()
-	end
-end
-
 -- Events
 
 if Environment.IsServer() then
-	Events.Connect("inventory.moveitem", API.MoveItem)
+	Events.Connect("inventory.moveitem", API.MoveItemHandler)
+	Events.Connect("inventory.dropone", API.DropOneHandler)
 else
-	Input.actionPressedEvent:Connect(API.DropDraggedItem)
+	Input.actionPressedEvent:Connect(API.DropOne)
 end
 
 return API

@@ -62,30 +62,14 @@ local function InventoryChanged(inv, slot)
 	end
 end
 
-local function OnHoveredEvent(button, slot, slotIndex)
-	local bg = slot:FindChildByName("Background")
-	local color = bg:GetColor()
-
-	color.a = .6
-	bg:SetColor(color)
-end
-
-local function OnUnhoveredEvent(button, slot, slotIndex)
-	local bg = slot:FindChildByName("Background")
-	local color = bg:GetColor()
-
-	color.a = 0.425
-	bg:SetColor(color)
-end
-
 for index, slot in ipairs(SLOTS:GetChildren()) do
 	local button = slot:FindChildByName("Button")
 	local icon = slot:FindChildByName("Icon")
 
 	if(button ~= nil and icon ~= nil) then
 		button.pressedEvent:Connect(API.OnSlotPressed, INVENTORY, slot, index)
-		button.hoveredEvent:Connect(OnHoveredEvent, slot, index)
-		button.unhoveredEvent:Connect(OnUnhoveredEvent, slot, index)
+		button.hoveredEvent:Connect(API.OnHoveredEvent, INVENTORY, slot, index)
+		button.unhoveredEvent:Connect(API.OnUnhoveredEvent, INVENTORY, slot, index)
 	end
 end
 
