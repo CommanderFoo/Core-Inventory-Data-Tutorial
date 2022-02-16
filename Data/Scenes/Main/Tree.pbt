@@ -54,6 +54,7 @@ Objects {
   ChildIds: 15623537154927602963
   ChildIds: 1854325465249854963
   ChildIds: 5009650852704315813
+  ChildIds: 15310760213469618396
   ChildIds: 1513615975252771227
   ChildIds: 4734567180528103950
   Collidable_v2 {
@@ -556,6 +557,7 @@ Objects {
   }
   ParentId: 3107329432688077437
   ChildIds: 158112545039990231
+  ChildIds: 2499355903812577225
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -585,6 +587,105 @@ Objects {
         Y: 1024
       }
       RedrawTime: 30
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 2499355903812577225
+  Name: "UI Button"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7117247303919089753
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 100
+    Height: 30
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Button {
+      FontColor {
+        A: 1
+      }
+      FontSize: 20
+      ButtonColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      HoveredColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      PressedColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      DisabledColor {
+        R: 1
+        G: 1
+        B: 1
+        A: 1
+      }
+      Brush {
+        Id: 841534158063459245
+      }
+      IsButtonEnabled: true
+      ClickMode {
+        Value: "mc:ebuttonclickmode:default"
+      }
+      Font {
+      }
+      Justification {
+        Value: "mc:etextjustify:center"
+      }
+      VerticalJustification {
+        Value: "mc:everticaljustification:center"
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
     }
     AnchorLayout {
       SelfAnchor {
@@ -631,8 +732,8 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Control {
-    Width: 320
-    Height: 320
+    Width: 345
+    Height: 425
     UIX: -50
     RenderTransformPivot {
       Anchor {
@@ -672,14 +773,25 @@ Objects {
   }
   ParentId: 158112545039990231
   ChildIds: 17437688936301457293
-  ChildIds: 7974770167166736833
-  ChildIds: 12967220858904890919
-  ChildIds: 15549065919569077545
-  ChildIds: 8650196374226013613
-  ChildIds: 1460952819015164363
-  ChildIds: 6586411583295968407
-  ChildIds: 18058219244728768548
-  ChildIds: 2802929600250170689
+  ChildIds: 16869596270242406375
+  ChildIds: 9107023529602408067
+  ChildIds: 4981553887462156970
+  ChildIds: 577421376708017403
+  ChildIds: 15346813408161767728
+  ChildIds: 8244712504512110521
+  ChildIds: 13379146783266086279
+  ChildIds: 7975636455528949445
+  ChildIds: 1337339892847195245
+  ChildIds: 9525413709600367987
+  ChildIds: 4251991994502278241
+  ChildIds: 9300381158908525944
+  ChildIds: 9682825116167659338
+  ChildIds: 7775232834808866191
+  ChildIds: 8670598970177742414
+  ChildIds: 13603479146727672964
+  ChildIds: 1840212594934539957
+  ChildIds: 16536138916256911156
+  ChildIds: 8599681802952702869
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -721,7 +833,7 @@ Objects {
   }
 }
 Objects {
-  Id: 2802929600250170689
+  Id: 8599681802952702869
   Name: "Slot"
   Transform {
     Location {
@@ -735,6 +847,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -754,6 +872,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -763,28 +889,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 200
+          Float: 240
         }
         Overrides {
           Name: "UIY"
-          Float: 200
+          Float: 320
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -794,7 +916,7 @@ Objects {
   }
 }
 Objects {
-  Id: 18058219244728768548
+  Id: 16536138916256911156
   Name: "Slot"
   Transform {
     Location {
@@ -808,6 +930,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -827,6 +955,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -836,28 +972,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 100
+          Float: 160
         }
         Overrides {
           Name: "UIY"
-          Float: 200
+          Float: 320
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -867,7 +999,7 @@ Objects {
   }
 }
 Objects {
-  Id: 6586411583295968407
+  Id: 1840212594934539957
   Name: "Slot"
   Transform {
     Location {
@@ -881,6 +1013,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -900,6 +1038,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -909,28 +1055,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 0
+          Float: 80
         }
         Overrides {
           Name: "UIY"
-          Float: 200
+          Float: 320
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -940,7 +1082,7 @@ Objects {
   }
 }
 Objects {
-  Id: 1460952819015164363
+  Id: 13603479146727672964
   Name: "Slot"
   Transform {
     Location {
@@ -954,6 +1096,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -973,37 +1121,37 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
             Y: 1
             Z: 1
           }
-        }
-        Overrides {
-          Name: "UIX"
-          Float: 200
         }
         Overrides {
           Name: "UIY"
-          Float: 100
+          Float: 320
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -1013,7 +1161,7 @@ Objects {
   }
 }
 Objects {
-  Id: 8650196374226013613
+  Id: 8670598970177742414
   Name: "Slot"
   Transform {
     Location {
@@ -1027,6 +1175,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -1046,6 +1200,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -1055,28 +1217,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 100
+          Float: 240
         }
         Overrides {
           Name: "UIY"
-          Float: 100
+          Float: 240
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -1086,7 +1244,7 @@ Objects {
   }
 }
 Objects {
-  Id: 15549065919569077545
+  Id: 7775232834808866191
   Name: "Slot"
   Transform {
     Location {
@@ -1100,6 +1258,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -1119,6 +1283,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -1128,28 +1300,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 0
+          Float: 160
         }
         Overrides {
           Name: "UIY"
-          Float: 100
+          Float: 240
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -1159,7 +1327,7 @@ Objects {
   }
 }
 Objects {
-  Id: 12967220858904890919
+  Id: 9682825116167659338
   Name: "Slot"
   Transform {
     Location {
@@ -1173,6 +1341,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -1192,6 +1366,14 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -1201,24 +1383,24 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 200
+          Float: 80
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 240
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
         }
       }
     }
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 8434868342772142117
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
-          }
-        }
-        Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
-          }
+          Name: "UIEnabled"
+          Bool: false
         }
       }
     }
@@ -1228,7 +1410,7 @@ Objects {
   }
 }
 Objects {
-  Id: 7974770167166736833
+  Id: 9300381158908525944
   Name: "Slot"
   Transform {
     Location {
@@ -1242,6 +1424,12 @@ Objects {
     }
   }
   ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
   TemplateInstance {
     ParameterOverrideMap {
       key: 7956731972840643538
@@ -1261,6 +1449,93 @@ Objects {
           }
         }
         Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 240
+        }
+        Overrides {
+          Name: "Opacity"
+          Float: 0.4
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 8434868342772142117
+      value {
+        Overrides {
+          Name: "UIEnabled"
+          Bool: false
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 4251991994502278241
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
           Name: "Scale"
           Vector {
             X: 1
@@ -1270,24 +1545,691 @@ Objects {
         }
         Overrides {
           Name: "UIX"
-          Float: 100
+          Float: 240
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 160
         }
       }
     }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 9525413709600367987
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
     ParameterOverrideMap {
-      key: 11215625856970978084
+      key: 7956731972840643538
       value {
         Overrides {
-          Name: "Image"
-          AssetReference {
-            Id: 841534158063459245
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
           }
         }
         Overrides {
-          Name: "Visible"
-          Enum {
-            Value: "mc:evisibilitysetting:forceoff"
+          Name: "Rotation"
+          Rotator {
           }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 160
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 160
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 1337339892847195245
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 80
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 160
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 7975636455528949445
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 160
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 13379146783266086279
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 240
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 80
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 8244712504512110521
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 160
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 80
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 15346813408161767728
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 80
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 80
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 577421376708017403
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 80
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 4981553887462156970
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 240
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 9107023529602408067
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 160
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 16869596270242406375
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11725240846513322496
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 80
         }
       }
     }
@@ -1330,6 +2272,14 @@ Objects {
           Name: "Rotation"
           Rotator {
           }
+        }
+        Overrides {
+          Name: "Width"
+          Int: 75
+        }
+        Overrides {
+          Name: "Height"
+          Int: 75
         }
       }
     }
@@ -1545,6 +2495,1104 @@ Objects {
   }
 }
 Objects {
+  Id: 15310760213469618396
+  Name: "Chest Inventory"
+  Transform {
+    Location {
+      X: 180.027786
+      Y: 418.141174
+      Z: -0.000122070312
+    }
+    Rotation {
+      Yaw: 33.9510155
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 17979885260696604413
+  ChildIds: 9351078036401286960
+  ChildIds: 7154390288847875272
+  ChildIds: 12812324584032257444
+  ChildIds: 4325755466338997406
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Folder {
+    IsGroup: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 4325755466338997406
+  Name: "Server"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15310760213469618396
+  ChildIds: 12115642488480564011
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+    Type: Server
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 12115642488480564011
+  Name: "InventoryChestServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4325755466338997406
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Inventory"
+      ObjectReference {
+        SelfId: 9351078036401286960
+      }
+    }
+    Overrides {
+      Name: "cs:Potions"
+      AssetReference {
+        Id: 6391845248265823326
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 8724036724761246186
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 12812324584032257444
+  Name: "Client"
+  Transform {
+    Location {
+      X: 2.99560547
+      Y: 9.53674316e-07
+    }
+    Rotation {
+      Yaw: 89.9999847
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15310760213469618396
+  ChildIds: 3051071306267699969
+  ChildIds: 13728372903788121540
+  ChildIds: 17230891349226737038
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:forceoff"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  NetworkContext {
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 17230891349226737038
+  Name: "InventoryChestClient"
+  Transform {
+    Location {
+      X: -3.90164185
+      Y: 352.56073
+      Z: 3.05175781e-05
+    }
+    Rotation {
+      Yaw: -89.9999771
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12812324584032257444
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Trigger"
+      ObjectReference {
+        SelfId: 3051071306267699969
+      }
+    }
+    Overrides {
+      Name: "cs:Inventory"
+      ObjectReference {
+        SelfId: 9351078036401286960
+      }
+    }
+    Overrides {
+      Name: "cs:Slots"
+      ObjectReference {
+        SelfId: 16816769836679473621
+      }
+    }
+    Overrides {
+      Name: "cs:InventoryUI"
+      ObjectReference {
+        SelfId: 7880775080154395617
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 1512631181583154746
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 13728372903788121540
+  Name: "UI Container"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 12812324584032257444
+  ChildIds: 7880775080154395617
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Canvas {
+      ContentType {
+        Value: "mc:ecanvascontenttype:dynamic"
+      }
+      Opacity: 1
+      IsHUD: true
+      CanvasWorldSize {
+        X: 1024
+        Y: 1024
+      }
+      RedrawTime: 30
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:topleft"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 7880775080154395617
+  Name: "Chest Inventory Panel"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 13728372903788121540
+  ChildIds: 4231042871416614011
+  ChildIds: 11398114894986789044
+  ChildIds: 16816769836679473621
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:forceoff"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 320
+    Height: 220
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    Panel {
+      Opacity: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 16816769836679473621
+  Name: "Slots"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7880775080154395617
+  ChildIds: 15226992452555889153
+  ChildIds: 2109871356444241135
+  ChildIds: 9075690109826465875
+  ChildIds: 3408193010717559423
+  ChildIds: 9781051094626714462
+  ChildIds: 8103556257463854926
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: -30
+    Height: -30
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    AddSizeToParentIfUsingParentSize: true
+    UseParentWidth: true
+    UseParentHeight: true
+    Panel {
+      Opacity: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 8103556257463854926
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 200
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 100
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11215625856970978084
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 841534158063459245
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 9781051094626714462
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 100
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 100
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11215625856970978084
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 841534158063459245
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 3408193010717559423
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 0
+        }
+        Overrides {
+          Name: "UIY"
+          Float: 100
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11215625856970978084
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 841534158063459245
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 9075690109826465875
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 200
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11215625856970978084
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 841534158063459245
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 2109871356444241135
+  Name: "Slot"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+        Overrides {
+          Name: "Scale"
+          Vector {
+            X: 1
+            Y: 1
+            Z: 1
+          }
+        }
+        Overrides {
+          Name: "UIX"
+          Float: 100
+        }
+      }
+    }
+    ParameterOverrideMap {
+      key: 11215625856970978084
+      value {
+        Overrides {
+          Name: "Image"
+          AssetReference {
+            Id: 841534158063459245
+          }
+        }
+        Overrides {
+          Name: "Visible"
+          Enum {
+            Value: "mc:evisibilitysetting:forceoff"
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 15226992452555889153
+  Name: "Slot"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 16816769836679473621
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 7956731972840643538
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Slot"
+        }
+        Overrides {
+          Name: "Position"
+          Vector {
+          }
+        }
+        Overrides {
+          Name: "Rotation"
+          Rotator {
+          }
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 12394820399536874918
+    }
+  }
+}
+Objects {
+  Id: 11398114894986789044
+  Name: "Frame"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7880775080154395617
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 200
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+        Id: 8769319495601863430
+      }
+      Color {
+        A: 0.425
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 4231042871416614011
+  Name: "Background"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 7880775080154395617
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Control {
+    Width: 200
+    Height: 200
+    RenderTransformPivot {
+      Anchor {
+        Value: "mc:euianchor:middlecenter"
+      }
+    }
+    UseParentWidth: true
+    UseParentHeight: true
+    Image {
+      Brush {
+      }
+      Color {
+        A: 0.425
+      }
+      TeamSettings {
+      }
+      ShadowColor {
+        A: 1
+      }
+      ShadowOffset {
+      }
+      ScreenshotIndex: 1
+    }
+    AnchorLayout {
+      SelfAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+      TargetAnchor {
+        Anchor {
+          Value: "mc:euianchor:middlecenter"
+        }
+      }
+    }
+  }
+}
+Objects {
+  Id: 3051071306267699969
+  Name: "Trigger"
+  Transform {
+    Location {
+      X: -8.01086426e-05
+      Y: 59.8527794
+      Z: 104.003159
+    }
+    Rotation {
+    }
+    Scale {
+      X: 2.73800564
+      Y: 2.73324728
+      Z: 2.28636408
+    }
+  }
+  ParentId: 12812324584032257444
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:forceon"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Trigger {
+    Interactable: true
+    InteractionLabel: "Open Chest"
+    TeamSettings {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    TriggerShape_v2 {
+      Value: "mc:etriggershape:box"
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 7154390288847875272
+  Name: "Chest Big Closed"
+  Transform {
+    Location {
+    }
+    Rotation {
+      Yaw: 89.9999924
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15310760213469618396
+  UnregisteredParameters {
+    Overrides {
+      Name: "ma:Shared_Detail1:color"
+      Color {
+        R: 1
+        G: 0.720190465
+        B: 0.322000027
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_BaseMaterial:color"
+      Color {
+        R: 1
+        G: 0.562095165
+        B: 0.274
+        A: 1
+      }
+    }
+    Overrides {
+      Name: "ma:Shared_Detail2:color"
+      Color {
+        R: 0.330000103
+        G: 1
+        B: 0.712857
+        A: 1
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  CoreMesh {
+    MeshAsset {
+      Id: 16015402644942764267
+    }
+    Teams {
+      IsTeamCollisionEnabled: true
+      IsEnemyCollisionEnabled: true
+    }
+    StaticMesh {
+      Physics {
+        Mass: 100
+        LinearDamping: 0.01
+      }
+      BoundsScale: 1
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 9351078036401286960
+  Name: "Inventory"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 15310760213469618396
+  WantsNetworking: true
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Inventory {
+    InventoryNumSlots: 6
+    PickupItemsOnStart: true
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
   Id: 5009650852704315813
   Name: "Chest Inventory"
   Transform {
@@ -1641,12 +3689,6 @@ Objects {
       Name: "cs:Inventory"
       ObjectReference {
         SelfId: 12305356226229284732
-      }
-    }
-    Overrides {
-      Name: "cs:Potions"
-      AssetReference {
-        Id: 6391845248265823326
       }
     }
   }
@@ -2635,6 +4677,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Inventory {
+    InventoryNumSlots: 6
     PickupItemsOnStart: true
   }
   NetworkRelevanceDistance {
@@ -2736,12 +4779,6 @@ Objects {
       Name: "cs:Inventory"
       ObjectReference {
         SelfId: 4651665856030876054
-      }
-    }
-    Overrides {
-      Name: "cs:Potions"
-      AssetReference {
-        Id: 6391845248265823326
       }
     }
   }
@@ -3701,6 +5738,7 @@ Objects {
     Value: "mc:eindicatorvisibility:visiblewhenselected"
   }
   Inventory {
+    InventoryNumSlots: 6
     PickupItemsOnStart: true
   }
   NetworkRelevanceDistance {

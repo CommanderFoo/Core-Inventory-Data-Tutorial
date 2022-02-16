@@ -3,6 +3,7 @@ Assets {
   Name: "Speed Potion"
   PlatformAssetType: 33
   SerializationVersion: 107
+  VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Speed Potion"
     MaximumStackCount: 10

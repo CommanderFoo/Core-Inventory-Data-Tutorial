@@ -1,27 +1,27 @@
 Assets {
-  Id: 16070714087388038622
-  Name: "Health Potion"
+  Id: 17134242474146162398
+  Name: "Meat"
   PlatformAssetType: 33
   SerializationVersion: 107
-  VirtualFolderPath: "Potions"
+  VirtualFolderPath: "Food"
   ItemAsset {
-    CustomName: "Health Potion"
-    MaximumStackCount: 5
+    CustomName: "Meat"
+    MaximumStackCount: 16
     CustomParameters {
       Overrides {
         Name: "cs:Icon"
         AssetReference {
-          Id: 8760042141210602203
+          Id: 7742830241329053909
         }
       }
     }
     Assets {
-      Id: 8760042141210602203
-      Name: "Fantasy Spell Potion 004"
+      Id: 7742830241329053909
+      Name: "Survival Food Meat 001"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Potion_004"
+        AssetId: "UI_Survival_Food_021"
       }
     }
   }

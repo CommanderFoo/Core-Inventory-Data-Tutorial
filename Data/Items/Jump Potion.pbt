@@ -1,27 +1,27 @@
 Assets {
-  Id: 16070714087388038622
-  Name: "Health Potion"
+  Id: 10593538115348548299
+  Name: "Jump Potion"
   PlatformAssetType: 33
   SerializationVersion: 107
   VirtualFolderPath: "Potions"
   ItemAsset {
-    CustomName: "Health Potion"
-    MaximumStackCount: 5
+    CustomName: "Jump Potion"
+    MaximumStackCount: 15
     CustomParameters {
       Overrides {
         Name: "cs:Icon"
         AssetReference {
-          Id: 8760042141210602203
+          Id: 2676903893908111055
         }
       }
     }
     Assets {
-      Id: 8760042141210602203
-      Name: "Fantasy Spell Potion 004"
+      Id: 2676903893908111055
+      Name: "Fantasy Spell Potion 025"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Potion_004"
+        AssetId: "UI_Fantasy_Potion_025"
       }
     }
   }

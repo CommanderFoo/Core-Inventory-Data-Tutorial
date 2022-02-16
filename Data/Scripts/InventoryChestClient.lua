@@ -67,7 +67,7 @@ for index, slot in ipairs(SLOTS:GetChildren()) do
 	local icon = slot:FindChildByName("Icon")
 
 	if(button ~= nil and icon ~= nil) then
-		button.pressedEvent:Connect(API.OnSlotPressed, INVENTORY, slot, index)
+		button.pressedEvent:Connect(API.OnSlotPressedEvent, INVENTORY, slot, index)
 		button.hoveredEvent:Connect(API.OnHoveredEvent, INVENTORY, slot, index)
 		button.unhoveredEvent:Connect(API.OnUnhoveredEvent, INVENTORY, slot, index)
 	end

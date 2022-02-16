@@ -24,20 +24,22 @@ local function InventoryChanged(inv, slot)
 	end
 end
 
+local function ConnectSlotEvents()
+	for index, slot in ipairs(SLOTS:GetChildren()) do
+		local button = slot:FindChildByName("Button")
+		local icon = slot:FindChildByName("Icon")
+	
+		if(button ~= nil and icon ~= nil and button.isInteractable) then
+			button.pressedEvent:Connect(API.OnSlotPressedEvent, inventory, slot, index)
+			button.hoveredEvent:Connect(API.OnHoveredEvent, inventory, slot, index)
+			button.unhoveredEvent:Connect(API.OnUnhoveredEvent, inventory, slot, index)
+		end
+	end
+end
+
 while inventory == nil do
 	inventory = localPlayer:GetInventories()[1]
 	Task.Wait()
-end
-
-for index, slot in ipairs(SLOTS:GetChildren()) do
-	local button = slot:FindChildByName("Button")
-	local icon = slot:FindChildByName("Icon")
-
-	if(button ~= nil and icon ~= nil) then
-		button.pressedEvent:Connect(API.OnSlotPressed, inventory, slot, index)
-		button.hoveredEvent:Connect(API.OnHoveredEvent, inventory, slot, index)
-		button.unhoveredEvent:Connect(API.OnUnhoveredEvent, inventory, slot, index)
-	end
 end
 
 for i, item in pairs(inventory:GetItems()) do
@@ -45,3 +47,5 @@ for i, item in pairs(inventory:GetItems()) do
 end
 
 inventory.changedEvent:Connect(InventoryChanged)
+
+ConnectSlotEvents()

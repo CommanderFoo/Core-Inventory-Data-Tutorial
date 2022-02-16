@@ -145,8 +145,10 @@ function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlo
 	if fromInventory ~= nil and toInventory ~= nil then
 		local item = fromInventory:GetItem(fromSlotIndex)
 
-		toInventory:AddItem(item.itemAssetId, { count = 1, slot = toSlotIndex })
-		fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 })
+		if toInventory:CanAddItem(item.itemAssetId, { count = 1, slot = toSlotIndex }) then
+			toInventory:AddItem(item.itemAssetId, { count = 1, slot = toSlotIndex })
+			fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 })
+		end
 	end
 end
 
@@ -180,7 +182,7 @@ function API.DisableCursor()
 	UI.SetCursorVisible(false)
 end
 
-function API.OnSlotPressed(button, inventory, slot, slotIndex)
+function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 	local icon = slot:FindChildByName("Icon")
 	local isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
 	local count = icon:FindChildByName("Count")
@@ -239,14 +241,13 @@ function API.DropOne(player, action)
 			local isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
 			local count = icon:FindChildByName("Count")
 			local item = API.ACTIVE.inventory:GetItem(API.ACTIVE.slotIndex)
+			local newCount = math.max(0, item.count - 1)
 
 			if API.ACTIVE.inventory == API.ACTIVE.hoveredInventory and API.ACTIVE.slotIndex == API.ACTIVE.hoveredSlotIndex then
 				API.PROXY.visibility = Visibility.FORCE_OFF
 				API.ACTIVE.slot.opacity = 1
 				API.ClearDraggedItem()
 			elseif isHidden then
-				local newCount = math.max(0, item.count - 1)
-
 				icon.visibility = Visibility.FORCE_ON
 				icon:SetImage(API.PROXY_ICON:GetImage())
 				API.PROXY_COUNT.text = tostring(newCount)
@@ -258,17 +259,16 @@ function API.DropOne(player, action)
 					API.ACTIVE.slot.opacity = 1
 					API.ClearDraggedItem()
 				end
-			elseif API.ACTIVE.inventory == API.ACTIVE.hoveredInventory then
+			else
 				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+				API.PROXY_COUNT.text = tostring(newCount)
 
-				API.PROXY.visibility = Visibility.FORCE_OFF
-				API.ACTIVE.slot.opacity = 1
-				API.ClearDraggedItem()
+				if newCount == 0 then
+					API.PROXY.visibility = Visibility.FORCE_OFF
+					API.ACTIVE.slot.opacity = 1
+					API.ClearDraggedItem()
+				end
 			end
-
-			-- API.ACTIVE.slot.opacity = 1
-			-- API.PROXY.visibility = Visibility.FORCE_OFF
-			-- API.ClearDraggedItem()
 		end
 	end
 end
