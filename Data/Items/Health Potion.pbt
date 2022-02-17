@@ -6,7 +6,7 @@ Assets {
   VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Health Potion"
-    MaximumStackCount: 5
+    MaximumStackCount: 10
     ItemTemplateAssetId: 1483240418585277618
     CustomParameters {
       Overrides {

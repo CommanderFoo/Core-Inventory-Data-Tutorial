@@ -7,6 +7,7 @@ Assets {
   ItemAsset {
     CustomName: "Apple"
     MaximumStackCount: 32
+    ItemTemplateAssetId: 7733390529249924735
     CustomParameters {
       Overrides {
         Name: "cs:Icon"

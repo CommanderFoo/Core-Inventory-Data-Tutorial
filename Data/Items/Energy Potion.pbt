@@ -7,6 +7,7 @@ Assets {
   ItemAsset {
     CustomName: "Energy Potion"
     MaximumStackCount: 10
+    ItemTemplateAssetId: 16400486864094699444
     CustomParameters {
       Overrides {
         Name: "cs:Icon"

@@ -7,6 +7,7 @@ Assets {
   ItemAsset {
     CustomName: "Meat"
     MaximumStackCount: 16
+    ItemTemplateAssetId: 16340090850627929939
     CustomParameters {
       Overrides {
         Name: "cs:Icon"

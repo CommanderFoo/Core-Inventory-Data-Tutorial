@@ -136,16 +136,26 @@ function API.MoveItemHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSl
 	end
 end
 
-function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
+function API.AddOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlotIndex)
 	local fromInventory = API.INVENTORIES[fromInventoryId]
 	local toInventory = API.INVENTORIES[toInventoryId]
 
 	if fromInventory ~= nil and toInventory ~= nil then
 		local item = fromInventory:GetItem(fromSlotIndex)
 
-		if toInventory:CanAddItem(item.itemAssetId, { count = 1, slot = toSlotIndex }) then
+		if toInventory:CanAddItem(item.itemAssetId, { count = 1, slot = toSlotIndex }) and fromInventory:CanRemoveFromSlot(fromSlotIndex) then
 			toInventory:AddItem(item.itemAssetId, { count = 1, slot = toSlotIndex })
-			print(fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 }))
+			fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 })
+		end
+	end
+end
+
+function API.RemoveItemHandler(inventoryId, slotIndex)
+	local inventory = API.INVENTORIES[inventoryId]
+
+	if inventory ~= nil then
+		if inventory:CanRemoveFromSlot(slotIndex) then
+			inventory:RemoveFromSlot(slotIndex)
 		end
 	end
 end
@@ -187,7 +197,6 @@ function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 
 	-- Has item already.
 	if API.ACTIVE.hasItem then
-
 		-- No icon, so this is an empty slot, and dropping it into it.
 		if isHidden then
 			icon.visibility = Visibility.FORCE_ON
@@ -232,8 +241,8 @@ function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 	end
 end
 
-function API.DropOne(player, action)
-	if action == "Inventory Drop One" then
+function API.AddOneAction(player, action)
+	if action == "Inventory Add One" then
 		if API.ACTIVE.hasItem and API.ACTIVE.hoveredInventory and API.ACTIVE.hoveredSlot then
 			local icon = API.ACTIVE.hoveredSlot:FindChildByName("Icon")
 			local isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
@@ -251,7 +260,7 @@ function API.DropOne(player, action)
 				icon:SetImage(API.PROXY_ICON:GetImage())
 				API.PROXY_COUNT.text = newCount == 0 and "" or tostring(newCount)
 
-				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+				Events.BroadcastToServer("inventory.addone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
 
 				if newCount == 0 then
 					API.PROXY.visibility = Visibility.FORCE_OFF
@@ -267,7 +276,7 @@ function API.DropOne(player, action)
 				end
 				
 				if canDrop then
-					Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+					Events.BroadcastToServer("inventory.addone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
 					API.PROXY_COUNT.text = newCount == 0 and "" or tostring(newCount)
 				end
 
@@ -278,6 +287,12 @@ function API.DropOne(player, action)
 				end
 			end
 		end
+	end
+end
+
+function API.DropItemAction(player, action)
+	if action == "Inventory Drop Item" and API.ACTIVE.hasItem then
+		Events.BroadcastToServer("inventory.dropitem", API.ACTIVE.inventory.id, API.ACTIVE.slotIndex)
 	end
 end
 
@@ -315,13 +330,24 @@ function API.FindLookupItemByAssetId(item)
 	end
 end
 
+function API.RemoveItemSlotPressed()
+	if API.ACTIVE.hasItem and API.ACTIVE.inventory ~= nil then
+		Events.BroadcastToServer("inventory.removeitem", API.ACTIVE.inventory.id, API.ACTIVE.slotIndex)
+		API.ACTIVE.slot.opacity = 1
+		API.ACTIVE.slotIcon.visibility = Visibility.FORCE_OFF
+		API.ClearDraggedItem()
+		API.PROXY.visibility = Visibility.FORCE_OFF
+	end
+end
+
 -- Events
 
 if Environment.IsServer() then
 	Events.Connect("inventory.moveitem", API.MoveItemHandler)
-	Events.Connect("inventory.dropone", API.DropOneHandler)
+	Events.Connect("inventory.addone", API.AddOneHandler)
+	Events.Connect("inventory.removeitem", API.RemoveItemHandler)
 else
-	Input.actionPressedEvent:Connect(API.DropOne)
+	Input.actionPressedEvent:Connect(API.AddOneAction)
 end
 
 return API
