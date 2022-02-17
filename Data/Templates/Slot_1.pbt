@@ -340,7 +340,6 @@ Assets {
             }
           }
           Text {
-            Label: "234"
             Color {
               R: 1
               G: 1

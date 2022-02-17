@@ -8,7 +8,6 @@ local SLOT_BACKGROUND_NORMAL = script:GetCustomProperty("SlotBackgroundNormal")
 
 local API = {}
 
-API.DEBUG = true
 API.PLAYERS = {}
 API.INVENTORIES = {}
 API.ACTIVE = {
@@ -50,12 +49,6 @@ function API.LoadPlayerInventory(player)
 
 			if item ~= nil and API.PLAYERS[player.id]:CanAddItem(item.asset, { count = entry[2], slot = i }) then
 				API.PLAYERS[player.id]:AddItem(item.asset, { count = entry[2], slot = i })
-			end
-		end
-	elseif API.DEBUG then
-		for _, item in pairs(POTIONS) do
-			if API.PLAYERS[player.id]:CanAddItem(item.asset, { count = 10 }) then
-				API.PLAYERS[player.id]:AddItem(item.asset, { count = 10 })
 			end
 		end
 	end
@@ -152,7 +145,7 @@ function API.DropOneHandler(fromInventoryId, toInventoryId, fromSlotIndex, toSlo
 
 		if toInventory:CanAddItem(item.itemAssetId, { count = 1, slot = toSlotIndex }) then
 			toInventory:AddItem(item.itemAssetId, { count = 1, slot = toSlotIndex })
-			fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 })
+			print(fromInventory:RemoveFromSlot(fromSlotIndex, { count = 1 }))
 		end
 	end
 end
@@ -244,8 +237,9 @@ function API.DropOne(player, action)
 		if API.ACTIVE.hasItem and API.ACTIVE.hoveredInventory and API.ACTIVE.hoveredSlot then
 			local icon = API.ACTIVE.hoveredSlot:FindChildByName("Icon")
 			local isHidden = icon.visibility == Visibility.FORCE_OFF and true or false
-			local count = icon:FindChildByName("Count")
 			local item = API.ACTIVE.inventory:GetItem(API.ACTIVE.slotIndex)
+			local itemCount = item.count
+			local itemAssetId = item.itemAssetId
 			local newCount = math.max(0, item.count - 1)
 
 			if API.ACTIVE.inventory == API.ACTIVE.hoveredInventory and API.ACTIVE.slotIndex == API.ACTIVE.hoveredSlotIndex then
@@ -255,7 +249,7 @@ function API.DropOne(player, action)
 			elseif isHidden then
 				icon.visibility = Visibility.FORCE_ON
 				icon:SetImage(API.PROXY_ICON:GetImage())
-				API.PROXY_COUNT.text = tostring(newCount)
+				API.PROXY_COUNT.text = newCount == 0 and "" or tostring(newCount)
 
 				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
 
@@ -265,8 +259,17 @@ function API.DropOne(player, action)
 					API.ClearDraggedItem()
 				end
 			else
-				Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
-				API.PROXY_COUNT.text = tostring(newCount)
+				local currentItem = API.ACTIVE.hoveredInventory:GetItem(API.ACTIVE.hoveredSlotIndex)
+				local canDrop = true
+
+				if currentItem ~= nil and currentItem.count == currentItem.maximumStackCount and currentItem.itemAssetId == itemAssetId then
+					canDrop = false
+				end
+				
+				if canDrop then
+					Events.BroadcastToServer("inventory.dropone", API.ACTIVE.inventory.id, API.ACTIVE.hoveredInventory.id, API.ACTIVE.slotIndex, API.ACTIVE.hoveredSlotIndex)
+					API.PROXY_COUNT.text = newCount == 0 and "" or tostring(newCount)
+				end
 
 				if newCount == 0 then
 					API.PROXY.visibility = Visibility.FORCE_OFF

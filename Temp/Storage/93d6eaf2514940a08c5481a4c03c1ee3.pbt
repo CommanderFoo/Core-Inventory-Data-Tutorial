@@ -15,7 +15,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "ep"
+                StringVar: "jp"
               }
             }
             Entries {
@@ -23,7 +23,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 7
+                IntVar: 15
               }
             }
           }
@@ -40,7 +40,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "sp"
+                StringVar: "ep"
               }
             }
             Entries {
@@ -48,7 +48,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 10
+                IntVar: 3
               }
             }
           }
@@ -73,7 +73,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 3
+                IntVar: 10
               }
             }
           }
@@ -82,6 +82,15 @@ Entries {
       Entries {
         Key {
           IntVar: 4
+        }
+        SimpleValue {
+          Table {
+          }
+        }
+      }
+      Entries {
+        Key {
+          IntVar: 5
         }
         SimpleValue {
           Table {
@@ -98,32 +107,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 12
-              }
-            }
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 5
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "m"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 6
+                IntVar: 13
               }
             }
           }
@@ -132,6 +116,15 @@ Entries {
       Entries {
         Key {
           IntVar: 6
+        }
+        SimpleValue {
+          Table {
+          }
+        }
+      }
+      Entries {
+        Key {
+          IntVar: 7
         }
         SimpleValue {
           Table {
@@ -148,32 +141,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 1
-              }
-            }
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 7
-        }
-        SimpleValue {
-          Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "a"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 32
+                IntVar: 5
               }
             }
           }
@@ -194,22 +162,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "sp"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 1
-              }
-            }
           }
         }
       }
@@ -228,22 +180,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "a"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 2
-              }
-            }
           }
         }
       }
@@ -280,6 +216,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "m"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 16
+              }
+            }
           }
         }
       }
@@ -289,6 +241,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "a"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 4
+              }
+            }
           }
         }
       }
