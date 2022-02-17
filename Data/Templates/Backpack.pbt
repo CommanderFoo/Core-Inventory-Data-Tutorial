@@ -30,7 +30,7 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Inventory {
-          InventoryNumSlots: 18
+          InventoryNumSlots: 16
           PickupItemsOnStart: true
         }
         NetworkRelevanceDistance {

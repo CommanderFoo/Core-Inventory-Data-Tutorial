@@ -1,6 +1,6 @@
 Assets {
-  Id: 12384335785835149610
-  Name: "ShopClient"
+  Id: 10562000733437981361
+  Name: "PickupItem"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
