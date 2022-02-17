@@ -1,6 +1,11 @@
 local POTIONS = require(script:GetCustomProperty("Potions"))
 local INVENTORY = script:GetCustomProperty("Inventory")
 
+local SLOT_FRAME_HOVER = script:GetCustomProperty("SlotFrameHover")
+local SLOT_FRAME_NORMAL = script:GetCustomProperty("SlotFrameNormal")
+local SLOT_BACKGROUND_HOVER = script:GetCustomProperty("SlotBackgroundHover")
+local SLOT_BACKGROUND_NORMAL = script:GetCustomProperty("SlotBackgroundNormal")
+
 local API = {}
 
 API.DEBUG = true
@@ -274,11 +279,8 @@ function API.DropOne(player, action)
 end
 
 function API.OnHoveredEvent(button, inventory, slot, slotIndex)
-	local bg = slot:FindChildByName("Background")
-	local color = bg:GetColor()
-
-	color.a = .6
-	bg:SetColor(color)
+	slot:GetCustomProperty("Frame"):GetObject():SetColor(SLOT_FRAME_HOVER)
+	slot:GetCustomProperty("Background"):GetObject():SetColor(SLOT_BACKGROUND_HOVER)
 
 	API.ACTIVE.hoveredSlotIndex = slotIndex
 	API.ACTIVE.hoveredInventory = inventory
@@ -286,13 +288,8 @@ function API.OnHoveredEvent(button, inventory, slot, slotIndex)
 end
 
 function API.OnUnhoveredEvent(button, inventory, slot, slotIndex)
-	local bg = slot:FindChildByName("Background")
-	local color = bg:GetColor()
-
-	color.a = 0.425
-	bg:SetColor(color)
-
-	print("Unhovered", time())
+	slot:GetCustomProperty("Frame"):GetObject():SetColor(SLOT_FRAME_NORMAL)
+	slot:GetCustomProperty("Background"):GetObject():SetColor(SLOT_BACKGROUND_NORMAL)
 end
 
 -- Shared

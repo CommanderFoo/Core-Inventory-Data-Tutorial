@@ -1,13 +1,13 @@
 Assets {
-  Id: 3669531844946665302
-  Name: "Slot Locked"
+  Id: 9951480137272277549
+  Name: "Slot"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 12714678607298909253
+      RootId: 1680811936629800543
       Objects {
-        Id: 12714678607298909253
-        Name: "Slot Locked"
+        Id: 1680811936629800543
+        Name: "Slot"
         Transform {
           Scale {
             X: 1
@@ -15,12 +15,42 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 11725240846513322496
-        ChildIds: 12189665364035350681
-        ChildIds: 15871690641600845656
-        ChildIds: 2931529476097860132
-        ChildIds: 5025323435813207219
-        ChildIds: 12328266773479071666
+        ParentId: 16477236687213086855
+        ChildIds: 1011772035714833027
+        ChildIds: 16329318139300288169
+        ChildIds: 879926025679140264
+        UnregisteredParameters {
+          Overrides {
+            Name: "cs:Frame"
+            ObjectReference {
+              SubObjectId: 1011772035714833027
+            }
+          }
+          Overrides {
+            Name: "cs:Background"
+            ObjectReference {
+              SubObjectId: 8891090642596527426
+            }
+          }
+          Overrides {
+            Name: "cs:Icon"
+            ObjectReference {
+              SubObjectId: 16329318139300288169
+            }
+          }
+          Overrides {
+            Name: "cs:Count"
+            ObjectReference {
+              SubObjectId: 8590866795804415077
+            }
+          }
+          Overrides {
+            Name: "cs:Button"
+            ObjectReference {
+              SubObjectId: 879926025679140264
+            }
+          }
+        }
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -34,16 +64,15 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: 75
-          Height: 75
-          UIY: 240
+          Width: 90
+          Height: 90
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
             }
           }
           Panel {
-            Opacity: 0.4
+            Opacity: 1
           }
           AnchorLayout {
             SelfAnchor {
@@ -60,73 +89,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12189665364035350681
-        Name: "Background"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 12714678607298909253
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Control {
-          Width: 200
-          Height: 200
-          RenderTransformPivot {
-            Anchor {
-              Value: "mc:euianchor:middlecenter"
-            }
-          }
-          UseParentWidth: true
-          UseParentHeight: true
-          Image {
-            Brush {
-            }
-            Color {
-              A: 0.425
-            }
-            TeamSettings {
-            }
-            ShadowColor {
-              A: 1
-            }
-            ShadowOffset {
-            }
-            ScreenshotIndex: 1
-          }
-          AnchorLayout {
-            SelfAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-            TargetAnchor {
-              Anchor {
-                Value: "mc:euianchor:middlecenter"
-              }
-            }
-          }
-        }
-      }
-      Objects {
-        Id: 15871690641600845656
+        Id: 1011772035714833027
         Name: "Frame"
         Transform {
           Location {
@@ -139,7 +102,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12714678607298909253
+        ParentId: 1680811936629800543
+        ChildIds: 8891090642596527426
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -164,10 +128,13 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 8769319495601863430
+              Id: 3839519509431907484
             }
             Color {
-              A: 0.425
+              R: 0.423267752
+              G: 0.208636895
+              B: 0.045186203
+              A: 1
             }
             TeamSettings {
             }
@@ -193,8 +160,8 @@ Assets {
         }
       }
       Objects {
-        Id: 2931529476097860132
-        Name: "Lock"
+        Id: 8891090642596527426
+        Name: "Background"
         Transform {
           Location {
           }
@@ -206,7 +173,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12714678607298909253
+        ParentId: 1011772035714833027
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -220,8 +187,8 @@ Assets {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
         Control {
-          Width: -40
-          Height: -40
+          Width: -6
+          Height: -6
           RenderTransformPivot {
             Anchor {
               Value: "mc:euianchor:middlecenter"
@@ -232,12 +199,12 @@ Assets {
           UseParentHeight: true
           Image {
             Brush {
-              Id: 633226176790124182
+              Id: 3839519509431907484
             }
             Color {
-              R: 1
-              G: 1
-              B: 1
+              R: 0.991102397
+              G: 0.496933132
+              B: 0.168269426
               A: 1
             }
             TeamSettings {
@@ -264,7 +231,7 @@ Assets {
         }
       }
       Objects {
-        Id: 5025323435813207219
+        Id: 16329318139300288169
         Name: "Icon"
         Transform {
           Location {
@@ -277,8 +244,8 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12714678607298909253
-        ChildIds: 14994750951387020927
+        ParentId: 1680811936629800543
+        ChildIds: 8590866795804415077
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -333,7 +300,7 @@ Assets {
         }
       }
       Objects {
-        Id: 14994750951387020927
+        Id: 8590866795804415077
         Name: "Count"
         Transform {
           Location {
@@ -350,7 +317,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 5025323435813207219
+        ParentId: 16329318139300288169
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -366,7 +333,6 @@ Assets {
         Control {
           Width: 70
           Height: 35
-          UIX: 10
           UIY: 15
           RenderTransformPivot {
             Anchor {
@@ -374,14 +340,14 @@ Assets {
             }
           }
           Text {
-            Label: "0"
+            Label: "234"
             Color {
               R: 1
               G: 1
               B: 1
               A: 1
             }
-            Size: 20
+            Size: 12
             Justification {
               Value: "mc:etextjustify:right"
             }
@@ -416,7 +382,7 @@ Assets {
         }
       }
       Objects {
-        Id: 12328266773479071666
+        Id: 879926025679140264
         Name: "Button"
         Transform {
           Location {
@@ -429,7 +395,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 12714678607298909253
+        ParentId: 1680811936629800543
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -483,6 +449,7 @@ Assets {
             Brush {
               Id: 841534158063459245
             }
+            IsButtonEnabled: true
             OnlyUseMainColor: true
             ClickMode {
               Value: "mc:ebuttonclickmode:preciseclick"
@@ -517,21 +484,12 @@ Assets {
       }
     }
     Assets {
-      Id: 8769319495601863430
-      Name: "Frame Outline Thin 001"
+      Id: 3839519509431907484
+      Name: "BG Flat 002"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "FrameOutline_020"
-      }
-    }
-    Assets {
-      Id: 633226176790124182
-      Name: "Icon Lock"
-      PlatformAssetType: 9
-      PrimaryAsset {
-        AssetType: "PlatformBrushAssetRef"
-        AssetId: "Icon_Lock"
+        AssetId: "BackgroundNoOutline_019"
       }
     }
     Assets {

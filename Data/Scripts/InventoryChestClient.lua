@@ -16,18 +16,12 @@ local function CloseUI()
 	else
 		TRIGGER.isInteractable = false
 	end
-
-	UI.SetCursorVisible(false)
-	UI.SetCanCursorInteractWithUI(false)
 end
 
 local function OnInteracted(trigger, obj)
 	if inTrigger and Object.IsValid(obj) and obj:IsA("Player") and obj == localPlayer then
 		INVENTORY_UI.visibility = Visibility.FORCE_ON
 		TRIGGER.isInteractable = false
-
-		UI.SetCursorVisible(true)
-		UI.SetCanCursorInteractWithUI(true)
 	end
 end
 

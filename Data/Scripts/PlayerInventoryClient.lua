@@ -28,7 +28,7 @@ local function ConnectSlotEvents()
 	for index, slot in ipairs(SLOTS:GetChildren()) do
 		local button = slot:FindChildByName("Button")
 		local icon = slot:FindChildByName("Icon")
-	
+
 		if(button ~= nil and icon ~= nil and button.isInteractable) then
 			button.pressedEvent:Connect(API.OnSlotPressedEvent, inventory, slot, index)
 			button.hoveredEvent:Connect(API.OnHoveredEvent, inventory, slot, index)

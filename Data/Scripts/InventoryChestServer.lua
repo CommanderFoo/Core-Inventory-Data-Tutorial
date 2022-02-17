@@ -6,7 +6,7 @@ local INVENTORY = script:GetCustomProperty("Inventory"):WaitForObject()
 local max_slots = 2147483647
 
 if INVENTORY.slotCount == max_slots then
-	error("Are you sure you want an inventory with 2 billion slots??")
+	error("Are you sure you have an inventory (with UI) with 2 billion slots??")
 else
 	for i = 1, INVENTORY.slotCount do
 		local slotIndex = math.random(INVENTORY.slotCount)
