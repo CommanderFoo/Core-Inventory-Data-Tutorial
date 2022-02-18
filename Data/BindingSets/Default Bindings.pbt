@@ -3,6 +3,7 @@ Assets {
   Name: "Default Bindings"
   PlatformAssetType: 29
   SerializationVersion: 107
+  DirectlyPublished: true
   BindingSetAsset {
     Bindings {
       BindingType {
