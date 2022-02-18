@@ -88,6 +88,7 @@ Objects {
   }
   ParentId: 11617098918841800357
   ChildIds: 15491471127349014375
+  ChildIds: 17599960997670557569
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -107,6 +108,50 @@ Objects {
     SubobjectId: 18181167149922767995
     InstanceId: 6284607495926595785
     TemplateId: 6802204027071275550
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 17599960997670557569
+  Name: "PlayerInventoryClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11467919440471047491
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Slots"
+      ObjectReference {
+        SelfId: 5806176934906912697
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 16604011833048606049
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
@@ -3039,6 +3084,7 @@ Objects {
     }
   }
   ParentId: 11617098918841800357
+  ChildIds: 8618019815198380188
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -3059,6 +3105,56 @@ Objects {
     SubobjectId: 17959746564214897439
     InstanceId: 6284607495926595785
     TemplateId: 6802204027071275550
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 8618019815198380188
+  Name: "PlayerInventoryServer"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11118145655668036135
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:Backpack"
+      AssetReference {
+        Id: 6435642320966104047
+      }
+    }
+    Overrides {
+      Name: "cs:InventoryAssets"
+      AssetReference {
+        Id: 11187886621007564660
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 15147980146449683825
+    }
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
