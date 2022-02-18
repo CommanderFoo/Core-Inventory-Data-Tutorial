@@ -34,9 +34,6 @@ Assets {
               Id: 5004294234075582436
             }
             ReferencedAssets {
-              Id: 6391845248265823326
-            }
-            ReferencedAssets {
               Id: 10562000733437981361
             }
             ReferencedAssets {
@@ -3681,46 +3678,6 @@ Assets {
         }
       }
       DirectlyPublished: true
-    }
-    Assets {
-      Id: 6391845248265823326
-      Name: "Iventory Assets"
-      PlatformAssetType: 31
-      DirectlyPublished: true
-      DataTableAsset {
-        Columns {
-          Name: "asset"
-          Type: 7
-        }
-        Columns {
-          Name: "key"
-          Type: 3
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "hp"
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "sp"
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "jp"
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "ep"
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "a"
-        }
-        Rows {
-          RawData: "0BADBADBADBADBAD"
-          RawData: "m"
-        }
-      }
     }
     Assets {
       Id: 5004294234075582436
