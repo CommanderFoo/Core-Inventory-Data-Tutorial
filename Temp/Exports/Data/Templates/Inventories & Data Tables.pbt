@@ -28,9 +28,6 @@ Assets {
               Id: 6396877654287896653
             }
             ReferencedAssets {
-              Id: 9414153814428187976
-            }
-            ReferencedAssets {
               Id: 1950323767704052217
             }
             ReferencedAssets {
@@ -53,6 +50,9 @@ Assets {
             }
             ReferencedAssets {
               Id: 5004294234075582436
+            }
+            ReferencedAssets {
+              Id: 6391845248265823326
             }
             ReferencedAssets {
               Id: 10593538115348548299
@@ -32478,6 +32478,46 @@ Assets {
       }
     }
     Assets {
+      Id: 6391845248265823326
+      Name: "Iventory Assets"
+      PlatformAssetType: 31
+      DirectlyPublished: true
+      DataTableAsset {
+        Columns {
+          Name: "asset"
+          Type: 7
+        }
+        Columns {
+          Name: "key"
+          Type: 3
+        }
+        Rows {
+          RawData: "DF06A550F1A145DE"
+          RawData: "hp"
+        }
+        Rows {
+          RawData: "9BA2091D2BE6F1FC"
+          RawData: "sp"
+        }
+        Rows {
+          RawData: "9303CEC9F7E94ACB"
+          RawData: "jp"
+        }
+        Rows {
+          RawData: "17411204F7518235"
+          RawData: "ep"
+        }
+        Rows {
+          RawData: "58C646559F76D04D"
+          RawData: "a"
+        }
+        Rows {
+          RawData: "EDC90EBFC6E466DE"
+          RawData: "m"
+        }
+      }
+    }
+    Assets {
       Id: 5004294234075582436
       Name: "Inventory Bindings"
       PlatformAssetType: 29
@@ -34777,53 +34817,6 @@ Assets {
         AssetType: "StaticMeshAssetRef"
         AssetId: "sm_chest_003"
       }
-    }
-    Assets {
-      Id: 9414153814428187976
-      Name: "Backpack"
-      PlatformAssetType: 5
-      TemplateAsset {
-        ObjectBlock {
-          RootId: 16044348753239220270
-          Objects {
-            Id: 16044348753239220270
-            Name: "Backpack"
-            Transform {
-              Scale {
-                X: 1
-                Y: 1
-                Z: 1
-              }
-            }
-            ParentId: 4781671109827199097
-            WantsNetworking: true
-            Collidable_v2 {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            Visible_v2 {
-              Value: "mc:evisibilitysetting:inheritfromparent"
-            }
-            CameraCollidable {
-              Value: "mc:ecollisionsetting:inheritfromparent"
-            }
-            EditorIndicatorVisibility {
-              Value: "mc:eindicatorvisibility:visiblewhenselected"
-            }
-            Inventory {
-              InventoryNumSlots: 16
-              PickupItemsOnStart: true
-            }
-            NetworkRelevanceDistance {
-              Value: "mc:eproxyrelevance:critical"
-            }
-          }
-        }
-        PrimaryAssetId {
-          AssetType: "None"
-          AssetId: "None"
-        }
-      }
-      DirectlyPublished: true
     }
     PrimaryAssetId {
       AssetType: "None"

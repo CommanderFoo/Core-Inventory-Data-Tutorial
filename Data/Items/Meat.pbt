@@ -3,6 +3,7 @@ Assets {
   Name: "Meat"
   PlatformAssetType: 33
   SerializationVersion: 107
+  DirectlyPublished: true
   VirtualFolderPath: "Food"
   ItemAsset {
     CustomName: "Meat"

@@ -44,4 +44,5 @@ Assets {
     }
   }
   SerializationVersion: 107
+  DirectlyPublished: true
 }

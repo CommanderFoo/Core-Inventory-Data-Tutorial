@@ -3,6 +3,7 @@ Assets {
   Name: "Jump Potion"
   PlatformAssetType: 33
   SerializationVersion: 107
+  DirectlyPublished: true
   VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Jump Potion"

@@ -3,6 +3,7 @@ Assets {
   Name: "Health Potion"
   PlatformAssetType: 33
   SerializationVersion: 107
+  DirectlyPublished: true
   VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Health Potion"
