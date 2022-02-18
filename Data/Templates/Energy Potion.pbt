@@ -64,4 +64,5 @@ Assets {
     }
   }
   SerializationVersion: 107
+  VirtualFolderPath: "Pickups"
 }

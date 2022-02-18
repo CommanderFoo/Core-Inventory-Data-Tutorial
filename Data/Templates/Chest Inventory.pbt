@@ -16,7 +16,6 @@ Assets {
           }
         }
         ParentId: 17979885260696604413
-        ChildIds: 11981044796840155119
         ChildIds: 15436283344732530919
         ChildIds: 6879940087097499145
         ChildIds: 4708100888143722217
@@ -34,42 +33,6 @@ Assets {
         }
         Folder {
           IsGroup: true
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 11981044796840155119
-        Name: "Inventory"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 18406443259503444874
-        WantsNetworking: true
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Inventory {
-          InventoryNumSlots: 8
-          PickupItemsOnStart: true
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
@@ -143,7 +106,6 @@ Assets {
         ParentId: 18406443259503444874
         ChildIds: 15464513669347118589
         ChildIds: 12625883091658331704
-        ChildIds: 15627003124404264661
         Collidable_v2 {
           Value: "mc:ecollisionsetting:forceoff"
         }
@@ -1618,72 +1580,6 @@ Assets {
         }
       }
       Objects {
-        Id: 15627003124404264661
-        Name: "InventoryChestClient"
-        Transform {
-          Location {
-            X: -3.90164185
-            Y: 352.56073
-            Z: 3.05175781e-05
-          }
-          Rotation {
-            Yaw: -89.9999771
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 6879940087097499145
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Trigger"
-            ObjectReference {
-              SubObjectId: 12625883091658331704
-            }
-          }
-          Overrides {
-            Name: "cs:Inventory"
-            ObjectReference {
-              SubObjectId: 11981044796840155119
-            }
-          }
-          Overrides {
-            Name: "cs:Slots"
-            ObjectReference {
-              SubObjectId: 10105509389843432545
-            }
-          }
-          Overrides {
-            Name: "cs:InventoryUI"
-            ObjectReference {
-              SubObjectId: 2499088670129630828
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 1512631181583154746
-          }
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
         Id: 4708100888143722217
         Name: "Server"
         Transform {
@@ -1698,7 +1594,6 @@ Assets {
           }
         }
         ParentId: 18406443259503444874
-        ChildIds: 3320075897248578557
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -1713,50 +1608,6 @@ Assets {
         }
         NetworkContext {
           Type: Server
-        }
-        NetworkRelevanceDistance {
-          Value: "mc:eproxyrelevance:critical"
-        }
-      }
-      Objects {
-        Id: 3320075897248578557
-        Name: "InventoryChestServer"
-        Transform {
-          Location {
-          }
-          Rotation {
-          }
-          Scale {
-            X: 1
-            Y: 1
-            Z: 1
-          }
-        }
-        ParentId: 4708100888143722217
-        UnregisteredParameters {
-          Overrides {
-            Name: "cs:Inventory"
-            ObjectReference {
-              SubObjectId: 11981044796840155119
-            }
-          }
-        }
-        Collidable_v2 {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        Visible_v2 {
-          Value: "mc:evisibilitysetting:inheritfromparent"
-        }
-        CameraCollidable {
-          Value: "mc:ecollisionsetting:inheritfromparent"
-        }
-        EditorIndicatorVisibility {
-          Value: "mc:eindicatorvisibility:visiblewhenselected"
-        }
-        Script {
-          ScriptAsset {
-            Id: 8724036724761246186
-          }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"

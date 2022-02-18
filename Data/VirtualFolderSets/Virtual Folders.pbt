@@ -12,5 +12,9 @@ Assets {
       VirtualFolderPath: "Food"
       PlatformAssetType: 33
     }
+    Folders {
+      VirtualFolderPath: "Pickups"
+      PlatformAssetType: 5
+    }
   }
 }

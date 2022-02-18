@@ -1,13 +1,13 @@
 Assets {
-  Id: 16340090850627929939
-  Name: "Meat"
+  Id: 11595538490923845391
+  Name: "Inventory Bindings"
   PlatformAssetType: 5
   TemplateAsset {
     ObjectBlock {
-      RootId: 18013431681047166184
+      RootId: 14925464489384970512
       Objects {
-        Id: 18013431681047166184
-        Name: "Meat"
+        Id: 14925464489384970512
+        Name: "Inventory Bindings"
         Transform {
           Scale {
             X: 1
@@ -15,7 +15,7 @@ Assets {
             Z: 1
           }
         }
-        ParentId: 4781671109827199097
+        ParentId: 17979885260696604413
         Collidable_v2 {
           Value: "mc:ecollisionsetting:inheritfromparent"
         }
@@ -28,34 +28,14 @@ Assets {
         EditorIndicatorVisibility {
           Value: "mc:eindicatorvisibility:visiblewhenselected"
         }
-        CoreMesh {
-          MeshAsset {
-            Id: 13783124704644739497
-          }
-          Teams {
-            IsTeamCollisionEnabled: true
-            IsEnemyCollisionEnabled: true
-          }
-          StaticMesh {
-            Physics {
-              Mass: 100
-              LinearDamping: 0.01
-            }
-            BoundsScale: 1
+        BindingSet {
+          BindingSetAsset {
+            Id: 5004294234075582436
           }
         }
         NetworkRelevanceDistance {
           Value: "mc:eproxyrelevance:critical"
         }
-      }
-    }
-    Assets {
-      Id: 13783124704644739497
-      Name: "Organic - Sweets - Candy 04"
-      PlatformAssetType: 1
-      PrimaryAsset {
-        AssetType: "StaticMeshAssetRef"
-        AssetId: "sm_prop_food_sweets_candy_005_ref"
       }
     }
     PrimaryAssetId {
@@ -64,5 +44,4 @@ Assets {
     }
   }
   SerializationVersion: 107
-  VirtualFolderPath: "Pickups"
 }
