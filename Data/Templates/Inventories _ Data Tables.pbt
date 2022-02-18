@@ -22,10 +22,10 @@ Assets {
         Folder {
           BundleDummy {
             ReferencedAssets {
-              Id: 7733390529249924735
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 6396877654287896653
+              Id: 841534158063459245
             }
             ReferencedAssets {
               Id: 841534158063459245
@@ -37,16 +37,16 @@ Assets {
               Id: 736360303936294653
             }
             ReferencedAssets {
-              Id: 16400486864094699444
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 1675640348897018421
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 16070714087388038622
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 1483240418585277618
+              Id: 841534158063459245
             }
             ReferencedAssets {
               Id: 11595538490923845391
@@ -58,25 +58,25 @@ Assets {
               Id: 6391845248265823326
             }
             ReferencedAssets {
-              Id: 10593538115348548299
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 1423858881867204148
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 17134242474146162398
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 16340090850627929939
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 13432249193466116667
+              Id: 841534158063459245
             }
             ReferencedAssets {
               Id: 10562000733437981361
             }
             ReferencedAssets {
-              Id: 12707389078473999939
+              Id: 841534158063459245
             }
             ReferencedAssets {
               Id: 6802204027071275550
@@ -88,10 +88,10 @@ Assets {
               Id: 9951480137272277549
             }
             ReferencedAssets {
-              Id: 8183945795129265492
+              Id: 841534158063459245
             }
             ReferencedAssets {
-              Id: 11214536043001213436
+              Id: 841534158063459245
             }
           }
         }
