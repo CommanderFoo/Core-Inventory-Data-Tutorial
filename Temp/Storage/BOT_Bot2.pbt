@@ -15,7 +15,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "a"
+                StringVar: "sp"
               }
             }
             Entries {
@@ -23,7 +23,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 2
+                IntVar: 5
               }
             }
           }

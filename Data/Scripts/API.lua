@@ -197,6 +197,7 @@ function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 
 	-- Has item already.
 	if API.ACTIVE.hasItem then
+		
 		-- No icon, so this is an empty slot, and dropping it into it.
 		if isHidden then
 			icon.visibility = Visibility.FORCE_ON
