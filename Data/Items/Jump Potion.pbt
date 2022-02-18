@@ -1,32 +1,26 @@
 Assets {
-  Id: 10593538115348548299
+  Id: 2397021834605411311
   Name: "Jump Potion"
   PlatformAssetType: 33
-  Marketplace {
-    Description: "The assets for following along with the Inventory & Data Table tutorial on docs."
-  }
   SerializationVersion: 107
-  DirectlyPublished: true
-  VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Jump Potion"
-    MaximumStackCount: 15
-    ItemTemplateAssetId: 1423858881867204148
+    MaximumStackCount: 5
     CustomParameters {
       Overrides {
         Name: "cs:Icon"
         AssetReference {
-          Id: 2676903893908111055
+          Id: 18402840434568049252
         }
       }
     }
     Assets {
-      Id: 2676903893908111055
-      Name: "Fantasy Spell Potion 025"
+      Id: 18402840434568049252
+      Name: "Fantasy Spell Potion 010"
       PlatformAssetType: 9
       PrimaryAsset {
         AssetType: "PlatformBrushAssetRef"
-        AssetId: "UI_Fantasy_Potion_025"
+        AssetId: "UI_Fantasy_Potion_010"
       }
     }
   }

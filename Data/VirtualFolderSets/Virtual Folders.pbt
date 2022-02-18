@@ -4,17 +4,5 @@ Assets {
   PlatformAssetType: 30
   SerializationVersion: 107
   VirtualFolderSetAsset {
-    Folders {
-      VirtualFolderPath: "Pickups"
-      PlatformAssetType: 5
-    }
-    Folders {
-      VirtualFolderPath: "Food"
-      PlatformAssetType: 33
-    }
-    Folders {
-      VirtualFolderPath: "Potions"
-      PlatformAssetType: 33
-    }
   }
 }
