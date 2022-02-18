@@ -1,7 +1,7 @@
-local API = require(script:GetCustomProperty("API"))
+local API = require(script:GetCustomProperty("InventoryAPI"))
 
 local function OnPlayerJoined(player)
-	API.CreateInventory(player)
+	API.CreatePlayerInventory(player)
 	API.LoadPlayerInventory(player)
 end
 

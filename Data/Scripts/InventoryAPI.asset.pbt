@@ -1,11 +1,11 @@
 Assets {
   Id: 12879219911357857649
-  Name: "API"
+  Name: "InventoryAPI"
   PlatformAssetType: 3
   TextAsset {
     CustomParameters {
       Overrides {
-        Name: "cs:Potions"
+        Name: "cs:InventoryAssets"
         AssetReference {
           Id: 6391845248265823326
         }

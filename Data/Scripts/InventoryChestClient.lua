@@ -1,4 +1,4 @@
-local API = require(script:GetCustomProperty("API"))
+local API = require(script:GetCustomProperty("InventoryAPI"))
 
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local INVENTORY = script:GetCustomProperty("Inventory"):WaitForObject()

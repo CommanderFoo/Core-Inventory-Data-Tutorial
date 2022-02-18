@@ -1,4 +1,4 @@
-local API = require(script:GetCustomProperty("API"))
+local API = require(script:GetCustomProperty("InventoryAPI"))
 
 API.SetDragProxy(script:GetCustomProperty("Proxy"):WaitForObject())
 

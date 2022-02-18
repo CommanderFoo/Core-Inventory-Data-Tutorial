@@ -1,4 +1,4 @@
-local POTIONS = require(script:GetCustomProperty("Potions"))
+local ASSETS = require(script:GetCustomProperty("InventoryAssets"))
 local INVENTORY = script:GetCustomProperty("Inventory")
 
 local SLOT_FRAME_HOVER = script:GetCustomProperty("SlotFrameHover")
@@ -30,7 +30,7 @@ function API.RegisterInventory(inventory)
 	API.INVENTORIES[inventory.id] = inventory
 end
 
-function API.CreateInventory(player)
+function API.CreatePlayerInventory(player)
 	local inventory = World.SpawnAsset(INVENTORY, { networkContext = NetworkContextType.NETWORKED })
 
 	inventory:Assign(player)
@@ -314,7 +314,7 @@ end
 -- Shared
 
 function API.FindLookupItemByKey(key)
-	for i, dataItem in pairs(POTIONS) do
+	for i, dataItem in pairs(ASSETS) do
 		if key == dataItem.key then
 			return dataItem
 		end
@@ -322,7 +322,7 @@ function API.FindLookupItemByKey(key)
 end
 
 function API.FindLookupItemByAssetId(item)
-	for i, dataItem in pairs(POTIONS) do
+	for i, dataItem in pairs(ASSETS) do
 		local id = CoreString.Split(dataItem.asset, ":")
 
 		if id == item.itemAssetId then
