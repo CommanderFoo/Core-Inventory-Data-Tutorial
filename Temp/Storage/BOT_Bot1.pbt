@@ -10,6 +10,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "jp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 5
+              }
+            }
           }
         }
       }
@@ -28,22 +44,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "a"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 13
-              }
-            }
           }
         }
       }
@@ -229,7 +229,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 6
+                IntVar: 7
               }
             }
           }

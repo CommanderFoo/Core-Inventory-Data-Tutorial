@@ -15,6 +15,14 @@ Assets {
           Id: 13102170324410257421
         }
       }
+      Overrides {
+        Name: "cs:PickedUp"
+        Bool: false
+      }
+      Overrides {
+        Name: "cs:PickedUp:isrep"
+        Bool: true
+      }
     }
     Assets {
       Id: 13102170324410257421
