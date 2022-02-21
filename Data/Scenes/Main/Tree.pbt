@@ -16,6 +16,7 @@ Objects {
   }
   ChildIds: 4515648609964478242
   ChildIds: 11617098918841800357
+  ChildIds: 12023631224669940775
   UnregisteredParameters {
   }
   Collidable_v2 {
@@ -31,6 +32,32 @@ Objects {
   }
   NetworkRelevanceDistance {
     Value: "mc:eproxyrelevance:critical"
+  }
+}
+Objects {
+  Id: 12023631224669940775
+  Name: "Proxy UI"
+  Transform {
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 4781671109827199097
+  TemplateInstance {
+    ParameterOverrideMap {
+      key: 9697995166960116170
+      value {
+        Overrides {
+          Name: "Name"
+          String: "Proxy UI"
+        }
+      }
+    }
+    TemplateAsset {
+      Id: 2632824596032444037
+    }
   }
 }
 Objects {
@@ -88,7 +115,7 @@ Objects {
   }
   ParentId: 11617098918841800357
   ChildIds: 15491471127349014375
-  ChildIds: 17599960997670557569
+  ChildIds: 13265798175384805067
   Collidable_v2 {
     Value: "mc:ecollisionsetting:forceoff"
   }
@@ -114,7 +141,7 @@ Objects {
   }
 }
 Objects {
-  Id: 17599960997670557569
+  Id: 13265798175384805067
   Name: "PlayerInventoryClient"
   Transform {
     Location {
@@ -133,6 +160,15 @@ Objects {
       Name: "cs:Slots"
       ObjectReference {
         SelfId: 5806176934906912697
+      }
+    }
+    Overrides {
+      Name: "cs:Proxy"
+      ObjectReference {
+        SelfId: 5978012243580229825
+        SubObjectId: 5352816580681374756
+        InstanceId: 12023631224669940775
+        TemplateId: 2632824596032444037
       }
     }
   }

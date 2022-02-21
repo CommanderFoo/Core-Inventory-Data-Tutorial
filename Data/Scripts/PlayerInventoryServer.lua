@@ -7,7 +7,7 @@ local function AddRandomItems(inventory)
 	for i = 1, inventory.slotCount do
 		local slotIndex = math.random(inventory.slotCount)
 		local asset = INVENTORY_ASSETS[math.random(#INVENTORY_ASSETS)].asset
-		local amount = math.random(1, 10 )
+		local amount = math.random(1, 10)
 
 		if inventory:CanAddItem(asset, { count = amount, slot = slotIndex }) then
 			inventory:AddItem(asset, { count = amount, slot = slotIndex })
