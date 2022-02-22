@@ -23,7 +23,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 8
+                IntVar: 10
               }
             }
           }
@@ -40,7 +40,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "m"
+                StringVar: "hp"
               }
             }
             Entries {
@@ -48,7 +48,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 6
+                IntVar: 4
               }
             }
           }
@@ -60,6 +60,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "sp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 1
+              }
+            }
           }
         }
       }
@@ -94,6 +110,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "a"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 17
+              }
+            }
           }
         }
       }
@@ -108,7 +140,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "sp"
+                StringVar: "ep"
               }
             }
             Entries {
@@ -128,22 +160,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "m"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 2
-              }
-            }
           }
         }
       }
@@ -158,7 +174,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "m"
+                StringVar: "ep"
               }
             }
             Entries {
@@ -166,7 +182,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 4
+                IntVar: 9
               }
             }
           }
@@ -178,22 +194,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "jp"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 2
-              }
-            }
           }
         }
       }
@@ -230,6 +230,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "jp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 5
+              }
+            }
           }
         }
       }
@@ -239,22 +255,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "a"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 10
-              }
-            }
           }
         }
       }
@@ -269,7 +269,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "hp"
+                StringVar: "m"
               }
             }
             Entries {
@@ -277,7 +277,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 10
+                IntVar: 12
               }
             }
           }
