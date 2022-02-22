@@ -72,7 +72,7 @@ local function OnSlotPressedEvent(button, slot, slotIndex)
 			tmpImg = nil
 		end
 
-		Events.BroadcastToServer("inventory.moveitem", inventory.id, activeSlotIndex, slotIndex)
+		Events.BroadcastToServer("inventory.moveitem", activeSlotIndex, slotIndex)
 		ClearDraggedItem()
 		PROXY.visibility = Visibility.FORCE_OFF
 
