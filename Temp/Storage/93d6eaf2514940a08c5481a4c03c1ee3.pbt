@@ -15,7 +15,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "sp"
+                StringVar: "hp"
               }
             }
             Entries {
@@ -48,7 +48,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 5
+                IntVar: 3
               }
             }
           }
@@ -69,12 +69,21 @@ Entries {
         }
         SimpleValue {
           Table {
+          }
+        }
+      }
+      Entries {
+        Key {
+          IntVar: 5
+        }
+        SimpleValue {
+          Table {
             Entries {
               Key {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "jp"
+                StringVar: "sp"
               }
             }
             Entries {
@@ -85,15 +94,6 @@ Entries {
                 IntVar: 1
               }
             }
-          }
-        }
-      }
-      Entries {
-        Key {
-          IntVar: 5
-        }
-        SimpleValue {
-          Table {
           }
         }
       }
@@ -198,7 +198,7 @@ Entries {
                 IntVar: 1
               }
               SimpleValue {
-                StringVar: "sp"
+                StringVar: "jp"
               }
             }
             Entries {

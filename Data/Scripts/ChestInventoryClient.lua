@@ -1,4 +1,5 @@
-local INVENTORY_API = require(script:GetCustomProperty("InventoryAPI"))
+local API = require(script:GetCustomProperty("InventoryAPI"))
+
 local CHEST_INVENTORY = script:GetCustomProperty("ChestInventory"):WaitForObject()
 local TRIGGER = script:GetCustomProperty("Trigger"):WaitForObject()
 local SLOTS = script:GetCustomProperty("Slots"):WaitForObject()
@@ -55,12 +56,14 @@ local function InventoryChanged(inv, slot)
 	end
 end
 
-for index, slot in ipairs(SLOTS:GetChildren()) do
-	local button = slot:FindChildByName("Button")
-	local icon = slot:FindChildByName("Icon")
+local function ConnectSlotEvents()
+	for index, slot in ipairs(SLOTS:GetChildren()) do
+		local button = slot:FindChildByName("Button")
+		local icon = slot:FindChildByName("Icon")
 
-	if(button ~= nil and icon ~= nil) then
-		button.pressedEvent:Connect(INVENTORY_API.OnSlotPressedEvent, INVENTORY, slot, index)
+		if(button ~= nil and icon ~= nil and button.isInteractable) then
+			button.pressedEvent:Connect(API.OnSlotPressedEvent, INVENTORY, slot, index)
+		end
 	end
 end
 
@@ -73,3 +76,5 @@ INVENTORY.changedEvent:Connect(InventoryChanged)
 TRIGGER.interactedEvent:Connect(OnInteracted)
 TRIGGER.endOverlapEvent:Connect(OnExitTrigger)
 TRIGGER.beginOverlapEvent:Connect(OnEnterTrigger)
+
+ConnectSlotEvents()
