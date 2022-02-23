@@ -2844,7 +2844,7 @@ Assets {
           }
           Objects {
             Id: 18269347568104109580
-            Name: "Trash"
+            Name: "Discard"
             Transform {
               Location {
               }
