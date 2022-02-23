@@ -237,10 +237,21 @@ function API.FindLookupItemByAssetId(item)
 	end
 end
 
+function API.RemoveItemSlotPressed()
+	if API.ACTIVE.hasItem and API.ACTIVE.inventory ~= nil then
+		Events.BroadcastToServer("inventory.removeitem", API.ACTIVE.inventory.id, API.ACTIVE.slotIndex)
+		API.ACTIVE.slot.opacity = 1
+		API.ACTIVE.slotIcon.visibility = Visibility.FORCE_OFF
+		API.ClearDraggedItem()
+		API.PROXY.visibility = Visibility.FORCE_OFF
+	end
+end
+
 -- Events
 
 if Environment.IsServer() then
 	Events.Connect("inventory.moveitem", API.MoveItemHandler)
+	Events.Connect("inventory.removeitem", API.RemoveItemHandler)
 end
 
 return API

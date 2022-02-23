@@ -2629,6 +2629,7 @@ Objects {
   ParentId: 2525456356697201980
   ChildIds: 12516687245670546138
   ChildIds: 11807993450058818174
+  ChildIds: 9972216039404756190
   Collidable_v2 {
     Value: "mc:ecollisionsetting:inheritfromparent"
   }
@@ -2671,6 +2672,56 @@ Objects {
     SubobjectId: 18269347568104109580
     InstanceId: 6284607495926595785
     TemplateId: 6802204027071275550
+  }
+}
+Objects {
+  Id: 9972216039404756190
+  Name: "DiscardItemClient"
+  Transform {
+    Location {
+    }
+    Rotation {
+    }
+    Scale {
+      X: 1
+      Y: 1
+      Z: 1
+    }
+  }
+  ParentId: 11457019017681346356
+  UnregisteredParameters {
+    Overrides {
+      Name: "cs:InventoryAPI"
+      AssetReference {
+        Id: 6440305958747694748
+      }
+    }
+    Overrides {
+      Name: "cs:Button"
+      ObjectReference {
+        SelfId: 481381945228347678
+      }
+    }
+  }
+  Collidable_v2 {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  Visible_v2 {
+    Value: "mc:evisibilitysetting:inheritfromparent"
+  }
+  CameraCollidable {
+    Value: "mc:ecollisionsetting:inheritfromparent"
+  }
+  EditorIndicatorVisibility {
+    Value: "mc:eindicatorvisibility:visiblewhenselected"
+  }
+  Script {
+    ScriptAsset {
+      Id: 5068309968313276951
+    }
+  }
+  NetworkRelevanceDistance {
+    Value: "mc:eproxyrelevance:critical"
   }
 }
 Objects {
