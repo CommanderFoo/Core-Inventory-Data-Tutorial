@@ -31,9 +31,6 @@ Assets {
               Id: 11595538490923845391
             }
             ReferencedAssets {
-              Id: 5004294234075582436
-            }
-            ReferencedAssets {
               Id: 10562000733437981361
             }
             ReferencedAssets {
@@ -3680,37 +3677,6 @@ Assets {
       DirectlyPublished: true
     }
     Assets {
-      Id: 5004294234075582436
-      Name: "Inventory Bindings"
-      PlatformAssetType: 29
-      DirectlyPublished: true
-      BindingSetAsset {
-        Bindings {
-          BindingType {
-            Value: "mc:ebindingtype:basic"
-          }
-          BasicBindingData {
-            BasicInputs {
-              KeyboardPrimary {
-                Value: "mc:ebindingkeyboard:rightclick"
-              }
-              KeyboardSecondary {
-                Value: "mc:ebindingkeyboard:none"
-              }
-              Controller {
-                Value: "mc:ebindinggamepad:none"
-              }
-            }
-          }
-          Action: "Inventory Add One"
-          Description: "Drops one item onto a slot."
-          CoreBehavior {
-            Value: "mc:ecorebehavior:none"
-          }
-        }
-      }
-    }
-    Assets {
       Id: 11595538490923845391
       Name: "Inventory Bindings"
       PlatformAssetType: 5
@@ -3742,7 +3708,7 @@ Assets {
             }
             BindingSet {
               BindingSetAsset {
-                Id: 5004294234075582436
+                Id: 841534158063459245
               }
             }
             NetworkRelevanceDistance {
