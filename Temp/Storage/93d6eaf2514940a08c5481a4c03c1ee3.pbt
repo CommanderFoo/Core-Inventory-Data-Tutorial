@@ -10,6 +10,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "hp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 4
+              }
+            }
           }
         }
       }
@@ -55,6 +71,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "hp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 1
+              }
+            }
           }
         }
       }
@@ -64,6 +96,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "jp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 3
+              }
+            }
           }
         }
       }
