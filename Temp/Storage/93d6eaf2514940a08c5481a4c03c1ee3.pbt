@@ -10,22 +10,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "hp"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 4
-              }
-            }
           }
         }
       }
@@ -62,6 +46,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "hp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 5
+              }
+            }
           }
         }
       }
@@ -84,7 +84,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 1
+                IntVar: 3
               }
             }
           }
@@ -130,6 +130,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "hp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 5
+              }
+            }
           }
         }
       }
@@ -139,6 +155,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "jp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 4
+              }
+            }
           }
         }
       }

@@ -184,17 +184,24 @@ function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 
 		-- Slot contains existing item
 		else
-			local tmpImg = icon:GetImage()
-			local tmpCount = count.text
+			local item = inventory:GetItem(API.ACTIVE.slotIndex)
+            local toItem = inventory:GetItem(slotIndex)
 
-			icon:SetImage(API.ACTIVE.slotIcon:GetImage())
-			count.text = API.ACTIVE.slotCount.text
-			API.ACTIVE.slotIcon:SetImage(tmpImg)
-			API.ACTIVE.slotCount.text = tmpCount
-			API.ACTIVE.slot.opacity = 1
+            if(item ~= nil and toItem ~= nil and item.itemAssetId == toItem.itemAssetId and toItem.count == toItem.maximumStackCount) then
+                API.ACTIVE.slot.opacity = 1
+            else
+                local tmpImg = icon:GetImage()
+                local tmpCount = count.text
 
-			tmpCount = nil
-			tmpImg = nil
+                icon:SetImage(API.ACTIVE.slotIcon:GetImage())
+                count.text = API.ACTIVE.slotCount.text
+                API.ACTIVE.slotIcon:SetImage(tmpImg)
+                API.ACTIVE.slotCount.text = tmpCount
+                API.ACTIVE.slot.opacity = 1
+
+                tmpCount = nil
+                tmpImg = nil
+            end
 		end
 
 		Events.BroadcastToServer("inventory.moveitem", API.ACTIVE.inventory.id, inventory.id, API.ACTIVE.slotIndex, slotIndex)
