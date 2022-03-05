@@ -184,7 +184,7 @@ function API.OnSlotPressedEvent(button, inventory, slot, slotIndex)
 
 		-- Slot contains existing item
 		else
-			local item = inventory:GetItem(API.ACTIVE.slotIndex)
+			local item = API.ACTIVE.inventory:GetItem(API.ACTIVE.slotIndex)
             local toItem = inventory:GetItem(slotIndex)
 
             if(item ~= nil and toItem ~= nil and item.itemAssetId == toItem.itemAssetId and toItem.count == toItem.maximumStackCount) then
