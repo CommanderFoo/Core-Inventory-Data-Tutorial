@@ -2,7 +2,7 @@ Assets {
   Id: 17134242474146162398
   Name: "Meat"
   PlatformAssetType: 33
-  SerializationVersion: 107
+  SerializationVersion: 118
   VirtualFolderPath: "Food"
   ItemAsset {
     CustomName: "Meat"

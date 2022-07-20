@@ -1,5 +1,9 @@
 local API = require(script:GetCustomProperty("InventoryAPI"))
 
+local PICKUP_CONTAINER = script:GetCustomProperty("PickupContainer"):WaitForObject()
+
+API.SetPickupContainer(PICKUP_CONTAINER)
+
 local function OnPlayerJoined(player)
 	API.CreatePlayerInventory(player)
 	API.LoadPlayerInventory(player)

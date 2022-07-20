@@ -348,14 +348,39 @@ function API.RemoveItemSlotPressed()
 	end
 end
 
+function API.SetPickupContainer(container)
+	API.pickupContainer = container
+end
+
+function API.DropItem()
+	if API.ACTIVE.hasItem and API.ACTIVE.inventory ~= nil then	
+		Events.BroadcastToServer("inventory.dropitem", API.ACTIVE.inventory.id, API.ACTIVE.slotIndex)
+
+		API.ACTIVE.slot.opacity = 1
+		API.ACTIVE.slotIcon.visibility = Visibility.FORCE_OFF
+		API.ClearDraggedItem()
+		API.PROXY.visibility = Visibility.FORCE_OFF
+	end
+end
+
+function API.DropItemHandler(inventoryId, slotIndex)
+	local inventory = API.INVENTORIES[inventoryId]
+
+	if inventory ~= nil and inventory:CanDropFromSlot(slotIndex) then
+		inventory:DropFromSlot(slotIndex, { networkContext = NetworkContextType.LOCAL_CONTEXT, all = true })
+	end
+end
+
 -- Events
 
 if Environment.IsServer() then
 	Events.Connect("inventory.moveitem", API.MoveItemHandler)
 	Events.Connect("inventory.addone", API.AddOneHandler)
 	Events.Connect("inventory.removeitem", API.RemoveItemHandler)
+	Events.Connect("inventory.dropitem", API.DropItemHandler)
 else
 	Input.actionPressedEvent:Connect(API.AddOneAction)
+	Input.actionPressedEvent:Connect(API.DropItem)
 end
 
 return API

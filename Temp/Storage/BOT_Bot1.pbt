@@ -23,7 +23,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 14
+                IntVar: 15
               }
             }
           }
@@ -98,7 +98,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 9
+                IntVar: 10
               }
             }
           }
@@ -198,7 +198,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 13
+                IntVar: 16
               }
             }
           }
@@ -223,7 +223,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 9
+                IntVar: 15
               }
             }
           }
@@ -248,7 +248,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 8
+                IntVar: 10
               }
             }
           }
@@ -273,7 +273,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 1
+                IntVar: 21
               }
             }
           }
@@ -285,6 +285,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "hp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 10
+              }
+            }
           }
         }
       }
@@ -307,7 +323,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 8
+                IntVar: 15
               }
             }
           }
@@ -332,7 +348,7 @@ Entries {
                 IntVar: 2
               }
               SimpleValue {
-                IntVar: 4
+                IntVar: 10
               }
             }
           }
@@ -369,6 +385,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "sp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 10
+              }
+            }
           }
         }
       }

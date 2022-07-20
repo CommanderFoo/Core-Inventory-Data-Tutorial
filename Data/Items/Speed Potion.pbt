@@ -2,7 +2,7 @@ Assets {
   Id: 11214536043001213436
   Name: "Speed Potion"
   PlatformAssetType: 33
-  SerializationVersion: 107
+  SerializationVersion: 118
   VirtualFolderPath: "Potions"
   ItemAsset {
     CustomName: "Speed Potion"

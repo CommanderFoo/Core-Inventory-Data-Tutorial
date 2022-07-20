@@ -9,8 +9,7 @@ local function OnTriggerOverlap(trigger, other)
 	if Object.IsValid(other) and other:IsA("Player") then
 		if Environment.IsServer() then
 			if other:GetInventories()[1]:CanPickUpItem(ITEM) then
-				other:GetInventories()[1]:PickUpItem(ITEM)
-
+				other:GetInventories()[1]:PickUpItem(ITEM, { all = true})
 			else
 				ITEM:Destroy()
 			end
