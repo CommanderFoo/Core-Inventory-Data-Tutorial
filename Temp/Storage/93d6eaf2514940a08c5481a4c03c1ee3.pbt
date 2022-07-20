@@ -91,6 +91,22 @@ Entries {
         }
         SimpleValue {
           Table {
+            Entries {
+              Key {
+                IntVar: 1
+              }
+              SimpleValue {
+                StringVar: "sp"
+              }
+            }
+            Entries {
+              Key {
+                IntVar: 2
+              }
+              SimpleValue {
+                IntVar: 2
+              }
+            }
           }
         }
       }
@@ -145,22 +161,6 @@ Entries {
         }
         SimpleValue {
           Table {
-            Entries {
-              Key {
-                IntVar: 1
-              }
-              SimpleValue {
-                StringVar: "sp"
-              }
-            }
-            Entries {
-              Key {
-                IntVar: 2
-              }
-              SimpleValue {
-                IntVar: 5
-              }
-            }
           }
         }
       }
